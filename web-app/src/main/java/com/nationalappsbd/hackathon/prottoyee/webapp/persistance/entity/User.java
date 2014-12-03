@@ -1,6 +1,6 @@
-package com.oneous.webapp.persistance.entity;
+package com.nationalappsbd.hackathon.prottoyee.webapp.persistance.entity;
 
-import com.oneous.webapp.persistance.enums.Role;
+import com.nationalappsbd.hackathon.prottoyee.webapp.persistance.enums.Role;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

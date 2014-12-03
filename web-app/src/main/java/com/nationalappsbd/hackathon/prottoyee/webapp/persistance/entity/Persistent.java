@@ -1,4 +1,4 @@
-package com.oneous.webapp.persistance.entity;
+package com.nationalappsbd.hackathon.prottoyee.webapp.persistance.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;

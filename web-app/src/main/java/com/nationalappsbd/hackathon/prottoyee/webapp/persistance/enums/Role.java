@@ -1,4 +1,4 @@
-package com.oneous.webapp.persistance.enums;
+package com.nationalappsbd.hackathon.prottoyee.webapp.persistance.enums;
 
 import org.springframework.security.core.GrantedAuthority;
 

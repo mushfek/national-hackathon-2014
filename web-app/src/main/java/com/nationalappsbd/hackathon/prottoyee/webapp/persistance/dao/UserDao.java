@@ -1,6 +1,6 @@
-package com.oneous.webapp.persistance.dao;
+package com.nationalappsbd.hackathon.prottoyee.webapp.persistance.dao;
 
-import com.oneous.webapp.persistance.entity.User;
+import com.nationalappsbd.hackathon.prottoyee.webapp.persistance.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;

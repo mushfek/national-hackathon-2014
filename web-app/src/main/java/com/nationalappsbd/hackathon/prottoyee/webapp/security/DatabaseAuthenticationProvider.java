@@ -1,7 +1,7 @@
-package com.oneous.webapp.security;
+package com.nationalappsbd.hackathon.prottoyee.webapp.security;
 
-import com.oneous.webapp.persistance.entity.User;
-import com.oneous.webapp.service.UserService;
+import com.nationalappsbd.hackathon.prottoyee.webapp.persistance.entity.User;
+import com.nationalappsbd.hackathon.prottoyee.webapp.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

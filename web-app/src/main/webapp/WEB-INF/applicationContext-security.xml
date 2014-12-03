@@ -10,7 +10,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.oneous.webapp.security"/>
+    <context:component-scan base-package="com.nationalappsbd.hackathon.prottoyee.webapp.security"/>
 
     <security:http pattern="/resources/**" security="none"/>
 
@@ -40,14 +40,14 @@
         <security:authentication-provider ref="databaseAuthenticationProvider"/>
     </security:authentication-manager>
 
-    <bean id="databaseAuthenticationProvider" class="com.oneous.webapp.security.DatabaseAuthenticationProvider"/>
+    <bean id="databaseAuthenticationProvider" class="com.nationalappsbd.hackathon.prottoyee.webapp.security.DatabaseAuthenticationProvider"/>
 
     <bean class="org.springframework.security.authentication.encoding.MessageDigestPasswordEncoder"
           id="messageDigestPasswordEncoder">
         <constructor-arg value="sha-256"/>
     </bean>
 
-    <bean id="authenticationSuccessHandler" class="com.oneous.webapp.security.SecurityAuthenticationSuccessHandler"/>
-    <bean id="authenticationFailureHandler" class="com.oneous.webapp.security.SecurityAuthenticationFailureHandler"/>
+    <bean id="authenticationSuccessHandler" class="com.nationalappsbd.hackathon.prottoyee.webapp.security.SecurityAuthenticationSuccessHandler"/>
+    <bean id="authenticationFailureHandler" class="com.nationalappsbd.hackathon.prottoyee.webapp.security.SecurityAuthenticationFailureHandler"/>
 
 </beans>
