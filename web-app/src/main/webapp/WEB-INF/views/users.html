@@ -5,13 +5,13 @@
       layout:decorator="layout/common-layout">
 
 <head>
-    <title>User List</title>
+    <title>Admin User List</title>
 </head>
 
 <body th:with="page='users'">
 
 <div layout:fragment="content">
-    <a href="#" th:href="@{/admin/users/create}" class="btn btn-primary btn-lg active" role="button">Create New User</a>
+    <a href="#" th:href="@{/admin/users/create}" class="btn btn-primary btn-lg active" role="button">Create New Admin User</a>
 
     <div class="table-responsive">
         <table class="table table-striped">
@@ -26,13 +26,13 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="user, userStat : ${userList}">
-                <td th:text="${userStat.count}">1</td>
-                <td th:text="${user.username}">Admin</td>
-                <td th:text="${user.email}">admin@oneous.com</td>
-                <td th:text="${#strings.listJoin(user.roles, ', ')}">User,Admin</td>
-                <td th:text="${user.created}">25/10/2014</td>
-                <td th:text="${user.updated}">25/10/2014</td>
+            <tr th:each="adminUser, adminUserStat : ${adminUserList}">
+                <td th:text="${adminUserStat.count}">1</td>
+                <td th:text="${adminUser.username}">Admin</td>
+                <td th:text="${adminUser.email}">admin@oneous.com</td>
+                <td th:text="${#strings.listJoin(adminUser.roles, ', ')}">User,Admin</td>
+                <td th:text="${adminUser.created}">25/10/2014</td>
+                <td th:text="${adminUser.updated}">25/10/2014</td>
             </tr>
             </tbody>
         </table>

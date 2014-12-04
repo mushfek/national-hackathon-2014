@@ -5,14 +5,14 @@
       layout:decorator="layout/common-layout">
 
 <head>
-    <title>User</title>
+    <title>Create New AdminUser</title>
 </head>
 
 <body th:with="page='users'">
 
 <div layout:fragment="content">
 
-    <form class="form-horizontal" role="form" action="#" th:action="@{/admin/users/create}" th:object="${user}"
+    <form class="form-horizontal" role="form" action="#" th:action="@{/admin/users/create}" th:object="${adminUser}"
           method="post">
         <div class="form-group" th:class="${#fields.hasErrors('username')}? 'form-group has-error' : 'form-group'">
             <label for="inputUsername" class="col-sm-2 control-label" th:text="#{label.username}">Username</label>

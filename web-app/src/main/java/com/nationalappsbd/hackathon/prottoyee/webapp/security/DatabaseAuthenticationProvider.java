@@ -1,7 +1,7 @@
 package com.nationalappsbd.hackathon.prottoyee.webapp.security;
 
-import com.nationalappsbd.hackathon.prottoyee.webapp.persistance.entity.User;
-import com.nationalappsbd.hackathon.prottoyee.webapp.service.UserService;
+import com.nationalappsbd.hackathon.prottoyee.webapp.persistance.entity.AdminUser;
+import com.nationalappsbd.hackathon.prottoyee.webapp.service.AdminUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class DatabaseAuthenticationProvider extends AbstractUserDetailsAuthentic
     private static final Logger log = LoggerFactory.getLogger(DatabaseAuthenticationProvider.class);
 
     @Autowired
-    private UserService userService;
+    private AdminUserService adminUserService;
 
     @Override
     protected void additionalAuthenticationChecks(UserDetails userDetails, UsernamePasswordAuthenticationToken authentication)
@@ -40,13 +40,13 @@ public class DatabaseAuthenticationProvider extends AbstractUserDetailsAuthentic
             throw new UsernameNotFoundException("Enter your username.");
         }
 
-        User user = userService.findUserByUsername(username);
+        AdminUser adminUser = adminUserService.findUserByUsername(username);
 
         String givenPassword = (String) authentication.getCredentials();
-        if (user == null || !user.getPassword().equals(givenPassword)) {
+        if (adminUser == null || !adminUser.getPassword().equals(givenPassword)) {
             throw new BadCredentialsException("Incorrect username or password.");
         }
 
-        return user;
+        return adminUser;
     }
 }

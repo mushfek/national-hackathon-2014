@@ -1,7 +1,7 @@
 package com.nationalappsbd.hackathon.prottoyee.webapp.controller;
 
-import com.nationalappsbd.hackathon.prottoyee.webapp.service.UserService;
-import com.nationalappsbd.hackathon.prottoyee.webapp.persistance.entity.User;
+import com.nationalappsbd.hackathon.prottoyee.webapp.service.AdminUserService;
+import com.nationalappsbd.hackathon.prottoyee.webapp.persistance.entity.AdminUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,35 +18,35 @@ import javax.validation.Valid;
  */
 
 @Controller
-public class UserController {
-    private static final Logger log = LoggerFactory.getLogger(UserController.class);
+public class AdminUserController {
+    private static final Logger log = LoggerFactory.getLogger(AdminUserController.class);
 
     @Autowired
-    private UserService userService;
+    private AdminUserService adminUserService;
 
     @RequestMapping("/admin/users")
     public String getUserList(Model model) {
         log.debug("getUserList");
-        model.addAttribute(userService.findAllUsers());
+        model.addAttribute(adminUserService.findAllUsers());
 
         return "users";
     }
 
     @RequestMapping(value = "/admin/users/create", method = RequestMethod.GET)
     public String createNewUserForm(Model model) {
-        model.addAttribute("user", new User());
+        model.addAttribute("adminUser", new AdminUser());
         return "users-create";
     }
 
     @RequestMapping(value = "/admin/users/create", method = RequestMethod.POST)
-    public String createNewUser(@Valid User user, BindingResult bindingResult) {
-        log.debug("createNewUser, username={}, email={}, errorCount={}", user.getUsername(), user.getEmail(), bindingResult.getErrorCount());
+    public String createNewUser(@Valid AdminUser adminUser, BindingResult bindingResult) {
+        log.debug("createNewUser, username={}, email={}, errorCount={}", adminUser.getUsername(), adminUser.getEmail(), bindingResult.getErrorCount());
 
-        if (userService.findUserByUsername(user.getUsername()) != null) {
+        if (adminUserService.findUserByUsername(adminUser.getUsername()) != null) {
             bindingResult.rejectValue("username", "error.username.exist");
         }
 
-        if (userService.findUserByEmail(user.getEmail()) != null) {
+        if (adminUserService.findUserByEmail(adminUser.getEmail()) != null) {
             bindingResult.rejectValue("email", "error.email.exist");
         }
 
@@ -54,8 +54,8 @@ public class UserController {
             return "users-create";
         }
 
-        user.setEnabled(true);
-        userService.saveUser(user);
+        adminUser.setEnabled(true);
+        adminUserService.saveUser(adminUser);
 
         return "redirect:/admin/users";
     }
