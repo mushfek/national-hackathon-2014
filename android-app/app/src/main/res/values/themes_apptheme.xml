@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="AppTheme" parent="@style/_AppTheme"/>
+
+  <style name="_AppTheme" parent="android:Theme.Holo.Light">
+
+    <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
+
+    <item name="android:textColorHighlight">#997fb841</item>
+    <item name="android:textSelectHandleLeft">@drawable/apptheme_text_select_handle_left</item>
+    <item name="android:textSelectHandleRight">@drawable/apptheme_text_select_handle_right</item>
+    <item name="android:textSelectHandle">@drawable/apptheme_text_select_handle_middle</item>
+
+    <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewAppTheme</item>
+
+    <item name="android:listChoiceIndicatorMultiple">@drawable/apptheme_btn_check_holo_light</item>
+
+    <item name="android:listChoiceIndicatorSingle">@drawable/apptheme_btn_radio_holo_light</item>
+
+    <item name="android:buttonStyle">@style/ButtonAppTheme</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonAppTheme</item>
+
+    <item name="android:dropDownSpinnerStyle">@style/SpinnerAppTheme</item>
+
+    <item name="android:progressBarStyleHorizontal">@style/ProgressBarAppTheme</item>
+
+    <item name="android:buttonStyleToggle">@style/ToggleAppTheme</item>
+
+    <item name="android:actionBarItemBackground">@drawable/selectable_background_pratyayee</item>
+    <item name="android:popupMenuStyle">@style/PopupMenu.Pratyayee</item>
+    <item name="android:dropDownListViewStyle">@style/DropDownListView.Pratyayee</item>
+    <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Pratyayee</item>
+    <item name="android:actionDropDownStyle">@style/DropDownNav.Pratyayee</item>
+    <item name="android:actionBarStyle">@style/ActionBar.Solid.Pratyayee</item>
+    <item name="android:actionModeBackground">@drawable/cab_background_top_pratyayee</item>
+    <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_pratyayee</item>
+    <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Pratyayee</item>
+
+  </style>
+
+  <style name="ActionBar.Solid.Pratyayee" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+    <item name="android:background">@drawable/ab_solid_pratyayee</item>
+    <item name="android:backgroundStacked">@drawable/ab_stacked_solid_pratyayee</item>
+    <item name="android:backgroundSplit">@drawable/ab_bottom_solid_pratyayee</item>
+    <item name="android:progressBarStyle">@style/ProgressBar.Pratyayee</item>
+  </style>
+
+  <style name="ActionBar.Transparent.Pratyayee" parent="@android:style/Widget.Holo.Light.ActionBar">
+    <item name="android:background">@drawable/ab_transparent_pratyayee</item>
+    <item name="android:progressBarStyle">@style/ProgressBar.Pratyayee</item>
+  </style>
+
+  <style name="PopupMenu.Pratyayee" parent="@android:style/Widget.Holo.Light.ListPopupWindow">
+    <item name="android:popupBackground">@drawable/menu_dropdown_panel_pratyayee</item>
+  </style>
+
+  <style name="DropDownListView.Pratyayee" parent="@android:style/Widget.Holo.Light.ListView.DropDown">
+    <item name="android:listSelector">@drawable/selectable_background_pratyayee</item>
+  </style>
+
+  <style name="ActionBarTabStyle.Pratyayee" parent="@android:style/Widget.Holo.Light.ActionBar.TabView">
+    <item name="android:background">@drawable/tab_indicator_ab_pratyayee</item>
+  </style>
+
+  <style name="DropDownNav.Pratyayee" parent="@android:style/Widget.Holo.Light.Spinner">
+    <item name="android:background">@drawable/spinner_background_ab_pratyayee</item>
+    <item name="android:popupBackground">@drawable/menu_dropdown_panel_pratyayee</item>
+    <item name="android:dropDownSelector">@drawable/selectable_background_pratyayee</item>
+  </style>
+
+  <style name="ProgressBar.Pratyayee" parent="@android:style/Widget.Holo.Light.ProgressBar.Horizontal">
+    <item name="android:progressDrawable">@drawable/progress_horizontal_pratyayee</item>
+  </style>
+
+  <style name="ActionButton.CloseMode.Pratyayee" parent="@android:style/Widget.Holo.Light.ActionButton.CloseMode">
+    <item name="android:background">@drawable/btn_cab_done_pratyayee</item>
+  </style>
+
+  <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+  <style name="Theme.Pratyayee.Widget" parent="@android:style/Theme.Holo">
+    <item name="android:popupMenuStyle">@style/PopupMenu.Pratyayee</item>
+    <item name="android:dropDownListViewStyle">@style/DropDownListView.Pratyayee</item>
+  </style>
+
+</resources>
