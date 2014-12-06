@@ -45,6 +45,12 @@ public class DashboardActivity extends RoboActivity {
         startActivity(awarenessIntent);
     }
 
+    public void onFileComplaintSelection(View view) {
+        Intent intent = new Intent(this, ComplaintActivity.class);
+
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

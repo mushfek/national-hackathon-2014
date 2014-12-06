@@ -17,6 +17,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.TileOverlayOptions;
 import com.google.maps.android.heatmaps.HeatmapTileProvider;
 import com.nationalappsbd.hackathon.namenotfound.app.R;
+import com.nationalappsbd.hackathon.namenotfound.app.service.StoryFactory;
 import com.oneous.log4android.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -61,6 +62,7 @@ public class HeatmapActivity extends RoboFragmentActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(HeatmapActivity.this, AddStoryActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -150,6 +152,7 @@ public class HeatmapActivity extends RoboFragmentActivity {
         // Get the data: latitude/longitude positions of police stations.
         try {
             list = readItems(R.raw.police_stations);
+            list.addAll(StoryFactory.getInstance().getLocation());
         } catch (JSONException e) {
             Toast.makeText(this, "Problem reading list of locations.", Toast.LENGTH_LONG).show();
         }
