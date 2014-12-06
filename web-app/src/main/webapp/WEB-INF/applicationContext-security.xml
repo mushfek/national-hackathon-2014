@@ -33,6 +33,8 @@
         <security:intercept-url pattern="/admin" access="hasRole('ROLE_ALL')"/>
         <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ALL')"/>
 
+        <security:intercept-url pattern="/api/**" access="permitAll"/>
+
         <security:intercept-url pattern="/**" access="hasRole('ROLE_NORMAL')"/>
     </security:http>
 
