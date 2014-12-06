@@ -3,7 +3,6 @@ package com.nationalappsbd.hackathon.namenotfound.app.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import com.google.inject.Inject;
 import com.nationalappsbd.hackathon.namenotfound.app.R;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
