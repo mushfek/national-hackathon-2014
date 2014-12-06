@@ -3,7 +3,9 @@
 
     <string name="google_map_key">AIzaSyCIbpfqrVHaUIinRgn8uS8kbQh4AF0iUac</string>
 
-    <string name="app_name">NameNotFound</string>
+    <string name="app_name">Prottoyee</string>
+    <string name="app_home">Home</string>
+
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_heatmap">Heatmap</string>
@@ -34,5 +36,13 @@
     </string>
     <string name="turn_on_location_service_title">Turn on Location</string>
     <string name="go_to_location_settings">Location Settings</string>
+
+    <string name="list_empty_msg">Nothing found to display</string>
+
+    <!--Counselling -->
+    <string name="counselling">Counselling</string>
+    <string name="counselling_message_list">Messages</string>
+    <string name="sender_you">You</string>
+    <string name="sender_counselor">Counselor</string>
 
 </resources>

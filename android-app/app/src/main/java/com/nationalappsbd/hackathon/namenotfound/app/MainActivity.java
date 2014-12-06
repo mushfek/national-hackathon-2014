@@ -1,8 +1,11 @@
 package com.nationalappsbd.hackathon.namenotfound.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import com.nationalappsbd.hackathon.namenotfound.app.counseling.activity.CounsellingMessagingActivity;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
 
@@ -16,7 +19,13 @@ public class MainActivity extends RoboActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // mainLabel.setText("Hello From Team: Name Not Found \n(Seriously guys??!! We can't find a name yet?)");
+    }
 
+    public void onCounsellingSelection(View view) {
+        Intent counsellingMessagingActivityIntent = new Intent(this, CounsellingMessagingActivity.class);
+        counsellingMessagingActivityIntent.putExtra(CounsellingMessagingActivity.EXTRA_USER_ID, 1); //TODO: set actual userId here
+
+        startActivity(counsellingMessagingActivityIntent);
     }
 
     @Override
