@@ -33,6 +33,7 @@
                       android:orientation="horizontal">
             <FrameLayout android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
+                         android:onClick="onFileComplaintSelection"
                          android:layout_gravity="left">
                 <ImageView android:id="@+id/crime_report"
                            android:layout_width="wrap_content"
@@ -104,18 +105,18 @@
     </LinearLayout>
 
     <!--<TextView-->
-            <!--android:id="@+id/main_label"-->
-            <!--android:text="@string/hello_world"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"/>-->
+    <!--android:id="@+id/main_label"-->
+    <!--android:text="@string/hello_world"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"/>-->
 
     <!--<com.getbase.floatingactionbutton.AddFloatingActionButton-->
-            <!--android:id="@+id/addNew"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_alignParentBottom="true"-->
-            <!--android:layout_alignParentRight="true"-->
-            <!--android:layout_alignParentEnd="true"/>-->
+    <!--android:id="@+id/addNew"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_alignParentEnd="true"/>-->
 
 
 </LinearLayout>

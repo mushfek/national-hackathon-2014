@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:orientation="vertical">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_story_complaint_inptu"
+                android:layout_margin="5dp"/>
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                />
+
+        <RadioGroup
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/pledge">
+
+            <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/iExperienced"
+                    android:text="@string/i_experienced_this"/>
+
+            <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/iSaw"
+                    android:text="@string/i_saw_this"/>
+        </RadioGroup>
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/title"
+                android:hint="@string/label_complaint_title"
+                android:layout_margin="5dp"/>
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                />
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:lines="6"
+                android:maxLength="5000"
+                android:hint="@string/hint_your_story"
+                android:id="@+id/story"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/hint_counter"
+                android:id="@+id/counter"
+                android:layout_gravity="right"/>
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_complaint_attachment"/>
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/attachmentLayout"
+                      android:visibility="gone">
+
+            <TextView android:id="@+id/attachmentLink"
+                      android:layout_width="0dp"
+                      android:autoLink="all"
+                      android:clickable="true"
+                      android:linksClickable="true"
+                      android:layout_height="wrap_content"
+                      android:layout_weight=".8"/>
+
+            <ImageView android:id="@+id/cross"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:layout_weight=".15"
+                       android:clickable="true"
+                       android:onClick="onCrossButton"
+                       android:src="@drawable/cross"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal">
+
+            <ImageButton android:layout_width="0dp"
+                         android:layout_weight=".3"
+                         android:layout_height="wrap_content"
+                         android:onClick="uploadImageOptionClicked"
+                         android:src="@drawable/camera"/>
+
+            <ImageButton android:layout_width="0dp"
+                         android:layout_weight=".3"
+                         android:layout_height="wrap_content"
+                         android:onClick="uploadAudioOptionClicked"
+                         android:src="@drawable/audio"/>
+
+            <ImageButton android:layout_width="0dp"
+                         android:layout_weight=".3"
+                         android:layout_height="wrap_content"
+                         android:src="@drawable/video"
+                         android:onClick="uploadVideoOptionClicked"/>
+
+        </LinearLayout>
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_contact_number"/>
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+        <EditText android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/contact_number"
+                  android:inputType="phone"/>
+
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:visibility="gone"
+                      android:id="@+id/otherContactNumber">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_user_name"/>
+
+            <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"/>
+
+            <EditText android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/user_name"
+                      android:inputType="phone"/>
+            <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_relation_ship"/>
+
+            <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"/>
+
+            <EditText android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/relaion_ship"
+                      android:inputType="phone"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:orientation="vertical">
+
+            <Button
+                    android:id="@+id/btn_next"
+                    android:text="@string/btn_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:onClick="onClick"
+                    android:layout_gravity="end"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,5 +1,6 @@
 package com.nationalappsbd.hackathon.namenotfound.app.activity;
 
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -16,6 +17,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.nationalappsbd.hackathon.namenotfound.app.R;
 import com.nationalappsbd.hackathon.namenotfound.app.domain.Story;
+import com.nationalappsbd.hackathon.namenotfound.app.service.StoryFactory;
 import com.oneous.log4android.Logger;
 import roboguice.activity.RoboFragmentActivity;
 
@@ -126,6 +128,10 @@ public class LocationPickerActivity extends RoboFragmentActivity implements Loca
             story.setLatitude(lastClickedLocation.latitude);
             story.setLongitude(lastClickedLocation.longitude);
 
+            StoryFactory.getInstance().addStory(story);
+            Intent intent = new Intent(this, HeatmapActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 

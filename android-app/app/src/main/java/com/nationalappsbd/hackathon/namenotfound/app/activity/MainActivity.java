@@ -32,7 +32,12 @@ public class MainActivity extends RoboActivity {
         Intent heatmapIntent = new Intent(this, HeatmapActivity.class);
 
         startActivity(heatmapIntent);
+    }
 
+    public void onFileComplaintSelection(View view) {
+        Intent intent = new Intent(this, ComplaintActivity.class);
+
+        startActivity(intent);
     }
 
     @Override
