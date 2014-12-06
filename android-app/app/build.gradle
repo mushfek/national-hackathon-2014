@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+        mavenLocal()
         mavenCentral()
         jcenter()
     }
@@ -10,8 +11,18 @@ buildscript {
 apply plugin: 'com.android.application'
 
 repositories {
+    mavenLocal()
     mavenCentral()
     jcenter()
+}
+
+project.ext {
+    keystore = file("therap-mobile.keystore")
+    keystorePassword = "android"
+    keyAliasDebug = "androiddebugkey"
+    keyAliasRelease = "androidreleasekey"
+    keyPasswordDebug = "android"
+    keyPasswordRelease = project.properties.releaseKeyPass
 }
 
 android {
@@ -48,13 +59,72 @@ android {
         exclude 'META-INF/notice.txt'
         exclude 'META-INF/license.txt'
     }
+
+    signingConfigs {
+        debug {
+            storeFile project.ext.keystore
+            storePassword project.ext.keystorePassword
+            keyAlias project.ext.keyAliasDebug
+            keyPassword project.ext.keyPasswordDebug
+        }
+
+        release {
+            storeFile project.ext.keystore
+            storePassword project.ext.keystorePassword
+            keyAlias project.ext.keyAliasRelease
+            keyPassword project.ext.keyPasswordRelease
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            zipAlign true
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            zipAlign true
+            signingConfig signingConfigs.release
+        }
+
+        applicationVariants.all { variant ->
+//            if (!project.hasProperty("releaseKeyPass")) {
+//                def props = new Properties()
+//                file(System.getProperty('user.home') + '/' + 'prottoyee.properties').withInputStream {
+//                    stream -> props.load(stream)
+//                }
+//
+//                copy {
+//                    from('templates/') {
+//                        include 'app_config.xml'
+//
+//                        props.each { key, value ->
+//                            filter(ReplaceTokens, tokens: props)
+//                        }
+//                    }
+//                    into 'src/main/res/values/'
+//                }
+//            }
+
+            //Rename output file to 'prottoyee-.apk'
+            variant.outputFile = new File(variant.outputFile.parent, "prottoyee-" + defaultConfig.versionName + '.apk')
+        }
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
-    compile 'org.roboguice:roboguice:3.0.1'
     provided 'org.roboguice:roboblender:3.0.1'
-
+    compile 'org.roboguice:roboguice:3.0.1'
     compile 'com.loopj.android:android-async-http:1.4.6'
+    compile 'com.google.android.gms:play-services:4.2.42'
+    compile 'com.android.support:appcompat-v7:19.+'
+    compile 'com.google.maps.android:android-maps-utils:0.3+'
+    compile 'com.getbase:floatingactionbutton:1.2.0'
+    compile 'com.mobsandgeeks:android-saripaar:1.0.2'
 }
+
+task debug(dependsOn: assembleDebug)
+
+task release(dependsOn: assembleRelease)

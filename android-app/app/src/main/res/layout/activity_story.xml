@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:orientation="vertical">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_story_input"
+            android:layout_margin="5dp"/>
+
+    <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            />
+    <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/category"
+            android:layout_margin="5dp"/>
+
+    <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            />
+    <RadioGroup
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/pledge">
+
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iExperienced"
+                android:text="@string/i_experienced_this"/>
+
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iSaw"
+                android:text="@string/i_saw_this"/>
+    </RadioGroup>
+
+    <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            />
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:lines="6"
+            android:maxLength="5000"
+            android:hint="@string/hint_your_story"
+            android:id="@+id/story"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/hint_counter"
+            android:id="@+id/counter" android:layout_gravity="right"/>
+    <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            />
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:gravity="center|bottom"
+            android:orientation="vertical">
+
+        <Button
+                android:id="@+id/btn_next"
+                android:text="@string/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:onClick="onClick"
+                android:layout_gravity="end"/>
+    </LinearLayout>
+
+</LinearLayout>

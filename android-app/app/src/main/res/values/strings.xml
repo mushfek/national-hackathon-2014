@@ -1,8 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">NameNotFound</string>
+    <string name="google_map_key">AIzaSyCIbpfqrVHaUIinRgn8uS8kbQh4AF0iUac</string>
+
+    <string name="app_name">Prottoyee</string>
+    <string name="app_home">Home</string>
+    
+    <!--Dashboard-->
+    <string name="emergency_help">Emergency Help</string>
+    <string name="crime_report">Crime Report</string>
+    <string name="awareness_portal">Awareness Portal</string>
+    <string name="heat_map">Heat Map</string>
+
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_heatmap">Heatmap</string>
+    <string name="i_saw_this">I saw this</string>
+    <string name="i_experienced_this">I experienced this</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_next">Next</string>
+    <string name="location_of_incident">Location of Incident</string>
+
+    <array name="category">
+        <item>Select that apply</item>
+        <item>Abuse</item>
+        <item>Eve teasing</item>
+        <item>Assault</item>
+        <item>Groping</item>
+        <item>Stalking</item>
+        <item>Other</item>
+    </array>
+
+    <string name="title_activity_story">StoryActivity</string>
+    <string name="hint_your_story">Your story …</string>
+    <string name="label_story_input">Share your story -Select the category and give a short description, click \'Next\'
+        to select place of the incident.</string>
+    <string name="hint_counter">5000/0</string>
+    <string name="title_activity_location_picker">LocationPickerActivity</string>
+    <string name="label_location_share">Select the area of the incident, click \'Submit\' to share you experience
+    </string>
+    <string name="turn_on_location_service_title">Turn on Location</string>
+    <string name="go_to_location_settings">Location Settings</string>
+    <string name="map_loading_wait_help_test">Wait a while to load your current position in the map</string>
+
+    <string name="list_empty_msg">Nothing found to display</string>
+
+    <!--Counselling -->
+    <string name="counselling_agreement">Counselling Agreement</string>
+    <string name="agreed">Agreed</string>
+    <string name="no">No</string>
+    <string name="agreement_message">Discuss your problems here. Our expert counsellors will try to help you. Your privacy is ensured.</string>
+
+    <string name="counselling">Counselling</string>
+    <string name="counselling_message_list">Messages</string>
+    <string name="sender_you">You</string>
+    <string name="sender_counselor">Counselor</string>
 
 </resources>
