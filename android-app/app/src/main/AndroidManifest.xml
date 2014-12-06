@@ -38,9 +38,20 @@
                   android:label="@string/place_of_incident"/>
 
         <activity android:name=".activity.CounselingActivity"
-                  android:label="@string/counseling"
-                  android:windowSoftInputMode="stateHidden"
-                  android:configChanges="orientation|screenSize|keyboardHidden"/>
+                  android:label="@string/counseling"/>
+
+        <!-- Awareness Portal -->
+        <activity android:name=".activity.AwarenessPortalCategoryListActivity"
+                  android:label="@string/awareness_categories"/>
+
+        <activity android:name=".activity.AwarenessPortalThreadListActivity"
+                  android:label="@string/awareness_threads"/>
+
+        <activity android:name=".activity.AwarenessPortalConversationActivity"
+                  android:label="@string/awareness_portal"/>
+
+        <activity android:name=".activity.AwarenessPortalNewThreadActivity"
+                  android:label="@string/add_new_thread"/>
 
         <!-- Google Maps API Key -->
 

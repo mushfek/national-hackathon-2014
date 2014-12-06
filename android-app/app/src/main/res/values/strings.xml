@@ -59,4 +59,9 @@
     <string name="sender_me">Me</string>
     <string name="sender_counselor">Counselor</string>
 
+    <!-- Awareness Portal -->
+    <string name="awareness_categories">Categories</string>
+    <string name="awareness_threads">Open Threads</string>
+    <string name="add_new_thread">Add New Thread</string>
+
 </resources>

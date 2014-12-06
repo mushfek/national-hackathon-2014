@@ -29,7 +29,8 @@
                   android:layout_weight="1"
                   android:layout_marginLeft="8dp"
                   android:text="@string/awareness_portal"
-                  android:drawableTop="@drawable/awareness_portal_dashboard"/>
+                  android:drawableTop="@drawable/awareness_portal_dashboard"
+                  android:onClick="onAwarenessPortalSelection"/>
 
     </LinearLayout>
 

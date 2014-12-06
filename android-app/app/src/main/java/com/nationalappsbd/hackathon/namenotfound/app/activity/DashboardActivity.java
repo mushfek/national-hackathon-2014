@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import com.google.inject.Inject;
 import com.nationalappsbd.hackathon.namenotfound.app.R;
 import com.nationalappsbd.hackathon.namenotfound.app.util.view.widget.DialogBuilder;
 import roboguice.activity.RoboActivity;
@@ -13,9 +14,6 @@ import roboguice.inject.ContentView;
 
 @ContentView(R.layout.activity_main)
 public class DashboardActivity extends RoboActivity {
-
-    //  @InjectView(R.id.main_label)
-    //  TextView mainLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +37,12 @@ public class DashboardActivity extends RoboActivity {
         Intent heatmapIntent = new Intent(this, HeatmapActivity.class);
 
         startActivity(heatmapIntent);
+    }
 
+    public void onAwarenessPortalSelection(View view) {
+        Intent awarenessIntent = new Intent(this, AwarenessPortalCategoryListActivity.class);
+
+        startActivity(awarenessIntent);
     }
 
     @Override
