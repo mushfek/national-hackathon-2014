@@ -50,6 +50,11 @@
     <string name="list_empty_msg">Nothing found to display.</string>
 
     <!--Counseling -->
+    <string name="agreement_message">
+        Ask your questions to our expert counselors. They will try to help with your issues.
+        Your privacy will be strictly maintained.
+    </string>
+    <string name="ok">OK</string>
     <string name="counseling">Counseling</string>
     <string name="sender_me">Me</string>
     <string name="sender_counselor">Counselor</string>

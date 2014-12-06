@@ -1,11 +1,13 @@
 package com.nationalappsbd.hackathon.namenotfound.app.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import com.nationalappsbd.hackathon.namenotfound.app.R;
+import com.nationalappsbd.hackathon.namenotfound.app.util.view.widget.DialogBuilder;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
 
@@ -22,10 +24,15 @@ public class DashboardActivity extends RoboActivity {
     }
 
     public void onCounselingSelection(View view) {
-        Intent counsellingMessagingActivityIntent = new Intent(this, CounsellingMessagingActivity.class);
-        counsellingMessagingActivityIntent.putExtra(CounsellingMessagingActivity.EXTRA_USER_ID, 1); //TODO: set actual userId here
-
-        startActivity(counsellingMessagingActivityIntent);
+        DialogBuilder.buildCounsellingAgreementDialog(this, getString(R.string.agreement_message),
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent counsellingMessagingActivityIntent = new Intent(DashboardActivity.this, CounselingActivity.class);
+                        counsellingMessagingActivityIntent.putExtra(CounselingActivity.EXTRA_USER_ID, 1); //TODO: set actual userId here
+                        startActivity(counsellingMessagingActivityIntent);
+                    }
+                }).show();
     }
 
     public void onHeatMapSelection(View view) {

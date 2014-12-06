@@ -26,9 +26,9 @@ import java.util.List;
  * @author Mushfekur Rahman
  */
 @ContentView(R.layout.counselling_message_list)
-public class CounsellingMessagingActivity extends RoboListActivity {
+public class CounselingActivity extends RoboListActivity {
 
-    private static final Logger log = Logger.getLogger(CounsellingMessagingActivity.class);
+    private static final Logger log = Logger.getLogger(CounselingActivity.class);
 
     public static final String EXTRA_USER_ID = "user_id";
 
@@ -99,7 +99,7 @@ public class CounsellingMessagingActivity extends RoboListActivity {
     private class CounsellingMessageListAdapter extends ArrayAdapter<Message> {
 
         public CounsellingMessageListAdapter(List<Message> messageList) {
-            super(CounsellingMessagingActivity.this, 0, messageList);
+            super(CounselingActivity.this, 0, messageList);
         }
 
         @Override
