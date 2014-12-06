@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
@@ -15,9 +14,9 @@ import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
 import roboguice.inject.InjectView;
 
-@ContentView(R.layout.activity_story)
-public class StoryActivity extends RoboActivity {
-    private Logger log = Logger.getLogger(StoryActivity.class);
+@ContentView(R.layout.activity_story_add)
+public class AddStoryActivity extends RoboActivity {
+    private Logger log = Logger.getLogger(AddStoryActivity.class);
 
     private static final int MAX_COUNT = 5000;
     public static final String STORY_KEY = "_story_key_";
@@ -44,11 +43,23 @@ public class StoryActivity extends RoboActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
         story.addTextChangedListener(textWatcher);
 
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.category));
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         category.setAdapter(spinnerArrayAdapter);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+
+        return false;
     }
 
     private boolean isValid() {
@@ -75,29 +86,6 @@ public class StoryActivity extends RoboActivity {
         return isValid;
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_story, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     public void onClick(View view) {
         if (view.getId() == R.id.btn_next) {
             if (isValid()) {
@@ -117,7 +105,7 @@ public class StoryActivity extends RoboActivity {
 
         storyDomain.setStory(story.getText().toString());
 
-        Intent intent = new Intent(this, LocationPickerActivity.class);
+        Intent intent = new Intent(this, AddStoryLocationActivity.class);
         intent.putExtra(STORY_KEY, storyDomain);
         startActivity(intent);
         finish();

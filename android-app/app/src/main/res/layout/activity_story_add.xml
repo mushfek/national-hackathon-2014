@@ -66,7 +66,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/hint_counter"
-            android:id="@+id/counter" android:layout_gravity="right"/>
+            android:id="@+id/counter"
+            android:layout_gravity="right"/>
     <Space
             android:layout_width="match_parent"
             android:layout_height="10dp"

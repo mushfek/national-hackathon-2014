@@ -7,7 +7,7 @@
 
     <!-- Dashboard -->
     <string name="emergency_help">Emergency Help</string>
-    <string name="crime_report">Crime Report</string>
+    <string name="file_complaint">File Complaint</string>
     <string name="awareness_portal">Awareness Portal</string>
     <string name="heat_map">Heat Map</string>
     <string name="hello_world">Hello world!</string>
@@ -30,22 +30,37 @@
         <item>Other</item>
     </array>
 
-    <string name="title_activity_story">StoryActivity</string>
-    <string name="hint_your_story">Your story …</string>
-    <string name="label_story_input">Share your story -Select the category and give a short description, click \'Next\'
-        to select place of the incident.</string>
-    <string name="hint_counter">5000/0</string>
-    <string name="title_activity_location_picker">LocationPickerActivity</string>
-    <string name="label_location_share">Select the area of the incident, click \'Submit\' to share you experience</string>
-    <string name="turn_on_location_service_title">Turn on Location</string>
-    <string name="go_to_location_settings">Location Settings</string>
-    <string name="map_loading_wait_help_test">Wait a while to load your current position in the map</string>
-    <string name="list_empty_msg">Nothing found to display</string>
 
     <!-- Counselling -->
     <string name="counselling">Counselling</string>
     <string name="counselling_message_list">Messages</string>
     <string name="sender_you">You</string>
+
+    <string name="tell_your_story">Tell Your Story</string>
+    <string name="hint_your_story">Your story…</string>
+    <string name="label_story_input">
+        Share your story. Select a category and provide your story. click Next to select place of the incident.
+    </string>
+    <string name="hint_counter">5000</string>
+    <string name="place_of_incident">Place of Incident</string>
+    <string name="label_location_share">
+        Tap on a place in the map to identify the place of the incident. Click Submit to share your story.
+    </string>
+    <string name="turn_on_location_service_title">Turn on Location</string>
+    <string name="go_to_location_settings">Location Settings</string>
+    <string name="map_loading_wait_help_test">
+        Please wait a few moments while your current position is identified on the map.
+    </string>
+    <string name="list_empty_msg">Nothing found to display.</string>
+
+    <!--Counseling -->
+    <string name="agreement_message">
+        Ask your questions to our expert counselors. They will try to help with your issues.
+        Your privacy will be strictly maintained.
+    </string>
+    <string name="ok">OK</string>
+    <string name="counseling">Counseling</string>
+    <string name="sender_me">Me</string>
     <string name="sender_counselor">Counselor</string>
     <string name="title_activity_complaint">ComplaintActivity</string>
     <string name="label_story_complaint_inptu">Your complaint will be forwared to Mohila Bishoyok Odhidoptor. Your
