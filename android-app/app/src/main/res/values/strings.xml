@@ -5,6 +5,12 @@
 
     <string name="app_name">Prottoyee</string>
     <string name="app_home">Home</string>
+    
+    <!--Dashboard-->
+    <string name="emergency_help">Emergency Help</string>
+    <string name="crime_report">Crime Report</string>
+    <string name="awareness_portal">Awareness Portal</string>
+    <string name="heat_map">Heat Map</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

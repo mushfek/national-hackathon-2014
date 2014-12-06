@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import com.nationalappsbd.hackathon.namenotfound.app.R;
-import com.nationalappsbd.hackathon.namenotfound.app.activity.CounsellingMessagingActivity;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
 
@@ -27,6 +26,13 @@ public class MainActivity extends RoboActivity {
         counsellingMessagingActivityIntent.putExtra(CounsellingMessagingActivity.EXTRA_USER_ID, 1); //TODO: set actual userId here
 
         startActivity(counsellingMessagingActivityIntent);
+    }
+
+    public void onHeatMapSelection(View view) {
+        Intent heatmapIntent = new Intent(this, HeatmapActivity.class);
+
+        startActivity(heatmapIntent);
+
     }
 
     @Override
