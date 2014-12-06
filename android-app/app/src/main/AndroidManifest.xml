@@ -53,6 +53,9 @@
         <activity android:name=".activity.AwarenessPortalNewThreadActivity"
                   android:label="@string/add_new_thread"/>
 
+        <activity android:name=".activity.AwarenessPortalThreadAddSuccessActivity"
+                  android:label="@string/awareness_portal"/>
+
         <activity
                 android:name="com.nationalappsbd.hackathon.namenotfound.app.activity.ComplaintActivity"
                 android:label="@string/title_activity_complaint"/>
