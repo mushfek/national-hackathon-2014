@@ -47,6 +47,11 @@
     <string name="list_empty_msg">Nothing found to display</string>
 
     <!--Counselling -->
+    <string name="counselling_agreement">Counselling Agreement</string>
+    <string name="agreed">Agreed</string>
+    <string name="no">No</string>
+    <string name="agreement_message">Discuss your problems here. Our expert counsellors will try to help you. Your privacy is ensured.</string>
+
     <string name="counselling">Counselling</string>
     <string name="counselling_message_list">Messages</string>
     <string name="sender_you">You</string>
