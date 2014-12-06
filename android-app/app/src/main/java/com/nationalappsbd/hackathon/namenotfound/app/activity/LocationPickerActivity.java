@@ -34,20 +34,16 @@ public class LocationPickerActivity extends RoboFragmentActivity implements Loca
 
     private LocationManager locationManager;
 
+    private LatLng LATITUDE_LONGITUDE_BANGLADESH = new LatLng(23, 90);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         log.debug("onCreate()");
 
         setContentView(R.layout.activity_location_picker);
         story = (Story) getIntent().getExtras().getSerializable(StoryActivity.STORY_KEY);
-
-        //setUpMapIfNeeded();
-
-
-        Toast.makeText(this, "Wait a while to load your current position in the map", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, getString(R.string.map_loading_wait_help_test), Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -58,11 +54,7 @@ public class LocationPickerActivity extends RoboFragmentActivity implements Loca
         setUpMapIfNeeded();
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        // Criteria criteria = new Criteria();
-        // criteria.setAccuracy(Criteria.ACCURACY_FINE);
-        // String provider = locationManager.getBestProvider(criteria, true);
-
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10, 0, this);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10, 0, this);
     }
 
     private void setUpMapIfNeeded() {
@@ -76,6 +68,7 @@ public class LocationPickerActivity extends RoboFragmentActivity implements Loca
             // Check if we were successful in obtaining the map.
 
             if (mMap != null) {
+                setUpMap(LATITUDE_LONGITUDE_BANGLADESH);
 
                 mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                     @Override
@@ -88,12 +81,13 @@ public class LocationPickerActivity extends RoboFragmentActivity implements Loca
         }
     }
 
-    private void setUpMap() {
+    private void setUpMap(LatLng location) {
         log.debug("setUpMap()");
 
         if (location != null) {
             log.debug("Lets move to my location");
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 10));
+            //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 10));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 8));
         }
     }
 
@@ -101,7 +95,7 @@ public class LocationPickerActivity extends RoboFragmentActivity implements Loca
         mMap.clear();
         mMap.addMarker(new MarkerOptions()
                 .position(lastClickedLocation)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_narker)));
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.heat_map_location1)));
     }
 
 
@@ -128,7 +122,11 @@ public class LocationPickerActivity extends RoboFragmentActivity implements Loca
     }
 
     public void onClick(View view) {
+        if (view.getId() == R.id.btn_submit) {
+            story.setLatitude(lastClickedLocation.latitude);
+            story.setLongitude(lastClickedLocation.longitude);
 
+        }
     }
 
     @Override
@@ -144,7 +142,7 @@ public class LocationPickerActivity extends RoboFragmentActivity implements Loca
 
             if (noOfTimesLocationUpdated >= MAX_NO_OF_LOCATION_UPDATES) {
                 locationManager.removeUpdates(this);
-                setUpMap();
+                setUpMap(new LatLng(location.getLatitude(), location.getLatitude()));
             }
         }
     }

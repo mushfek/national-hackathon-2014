@@ -42,6 +42,7 @@
     </string>
     <string name="turn_on_location_service_title">Turn on Location</string>
     <string name="go_to_location_settings">Location Settings</string>
+    <string name="map_loading_wait_help_test">Wait a while to load your current position in the map</string>
 
     <string name="list_empty_msg">Nothing found to display</string>
 

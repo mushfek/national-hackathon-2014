@@ -125,7 +125,7 @@ public class HeatmapActivity extends RoboFragmentActivity {
      */
     private void setUpMap() {
         log.debug("setupMap()");
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 4));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 7));
     }
 
     private void addHeatMap() {
