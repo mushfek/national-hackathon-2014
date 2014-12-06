@@ -3,23 +3,21 @@ package com.nationalappsbd.hackathon.namenotfound.app;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
-import roboguice.inject.InjectView;
 
 @ContentView(R.layout.activity_main)
 public class MainActivity extends RoboActivity {
 
-    @InjectView(R.id.main_label)
-    TextView mainLabel;
+    //  @InjectView(R.id.main_label)
+    //  TextView mainLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mainLabel.setText("Hello From Team: Name Not Found \n(Seriously guys??!! We can't find a name yet?)");
-    }
+        // mainLabel.setText("Hello From Team: Name Not Found \n(Seriously guys??!! We can't find a name yet?)");
 
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
