@@ -1,4 +1,4 @@
-package com.nationalappsbd.hackathon.namenotfound.app.heatmap.activity;
+package com.nationalappsbd.hackathon.namenotfound.app.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
-import com.mobsandgeeks.saripaar.Rule;
-import com.mobsandgeeks.saripaar.Validator;
-import com.mobsandgeeks.saripaar.annotation.Required;
 import com.nationalappsbd.hackathon.namenotfound.app.R;
-import com.nationalappsbd.hackathon.namenotfound.app.heatmap.domain.Story;
+import com.nationalappsbd.hackathon.namenotfound.app.domain.Story;
 import com.oneous.log4android.Logger;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;

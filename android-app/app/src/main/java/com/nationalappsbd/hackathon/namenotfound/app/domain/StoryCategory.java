@@ -1,4 +1,4 @@
-package com.nationalappsbd.hackathon.namenotfound.app.heatmap.domain;
+package com.nationalappsbd.hackathon.namenotfound.app.domain;
 
 /**
  * Created by A N M Bazlur Rahman

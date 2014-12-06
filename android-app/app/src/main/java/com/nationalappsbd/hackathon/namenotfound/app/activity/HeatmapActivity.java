@@ -1,4 +1,4 @@
-package com.nationalappsbd.hackathon.namenotfound.app.heatmap.activity;
+package com.nationalappsbd.hackathon.namenotfound.app.activity;
 
 import android.content.Intent;
 import android.os.Bundle;

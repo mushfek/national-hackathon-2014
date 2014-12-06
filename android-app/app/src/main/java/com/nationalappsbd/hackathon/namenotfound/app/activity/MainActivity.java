@@ -1,11 +1,12 @@
-package com.nationalappsbd.hackathon.namenotfound.app;
+package com.nationalappsbd.hackathon.namenotfound.app.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import com.nationalappsbd.hackathon.namenotfound.app.counseling.activity.CounsellingMessagingActivity;
+import com.nationalappsbd.hackathon.namenotfound.app.R;
+import com.nationalappsbd.hackathon.namenotfound.app.activity.CounsellingMessagingActivity;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
 

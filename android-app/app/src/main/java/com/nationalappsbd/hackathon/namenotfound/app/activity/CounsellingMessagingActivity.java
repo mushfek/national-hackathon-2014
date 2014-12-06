@@ -1,6 +1,5 @@
-package com.nationalappsbd.hackathon.namenotfound.app.counseling.activity;
+package com.nationalappsbd.hackathon.namenotfound.app.activity;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.inject.Inject;
 import com.nationalappsbd.hackathon.namenotfound.app.R;
-import com.nationalappsbd.hackathon.namenotfound.app.common.service.CommonService;
-import com.nationalappsbd.hackathon.namenotfound.app.common.util.view.adapter.ViewHolder;
-import com.nationalappsbd.hackathon.namenotfound.app.counseling.domain.Message;
+import com.nationalappsbd.hackathon.namenotfound.app.service.CommonService;
+import com.nationalappsbd.hackathon.namenotfound.app.util.view.adapter.ViewHolder;
+import com.nationalappsbd.hackathon.namenotfound.app.domain.Message;
 import com.oneous.log4android.Logger;
 import roboguice.activity.RoboListActivity;
 import roboguice.inject.ContentView;

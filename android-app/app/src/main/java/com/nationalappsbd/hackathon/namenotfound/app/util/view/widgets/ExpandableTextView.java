@@ -1,4 +1,4 @@
-package com.nationalappsbd.hackathon.namenotfound.app.common.util.view.widgets;
+package com.nationalappsbd.hackathon.namenotfound.app.util.view.widgets;
 
 import android.content.Context;
 import android.content.res.TypedArray;

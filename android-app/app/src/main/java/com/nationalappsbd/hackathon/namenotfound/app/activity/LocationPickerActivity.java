@@ -1,4 +1,4 @@
-package com.nationalappsbd.hackathon.namenotfound.app.heatmap.activity;
+package com.nationalappsbd.hackathon.namenotfound.app.activity;
 
 import android.location.Location;
 import android.location.LocationListener;
@@ -15,7 +15,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.nationalappsbd.hackathon.namenotfound.app.R;
-import com.nationalappsbd.hackathon.namenotfound.app.heatmap.domain.Story;
+import com.nationalappsbd.hackathon.namenotfound.app.domain.Story;
 import com.oneous.log4android.Logger;
 import roboguice.activity.RoboFragmentActivity;
 

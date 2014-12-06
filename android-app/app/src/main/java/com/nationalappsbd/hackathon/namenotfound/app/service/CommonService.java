@@ -1,9 +1,9 @@
-package com.nationalappsbd.hackathon.namenotfound.app.common.service;
+package com.nationalappsbd.hackathon.namenotfound.app.service;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.loopj.android.http.AsyncHttpClient;
-import com.nationalappsbd.hackathon.namenotfound.app.counseling.domain.Message;
+import com.nationalappsbd.hackathon.namenotfound.app.domain.Message;
 import com.oneous.log4android.Logger;
 
 import java.util.ArrayList;

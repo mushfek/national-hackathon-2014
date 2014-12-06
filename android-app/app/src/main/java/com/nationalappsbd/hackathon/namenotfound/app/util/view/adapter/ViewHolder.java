@@ -1,4 +1,4 @@
-package com.nationalappsbd.hackathon.namenotfound.app.common.util.view.adapter;
+package com.nationalappsbd.hackathon.namenotfound.app.util.view.adapter;
 
 import android.util.SparseArray;
 import android.view.View;
