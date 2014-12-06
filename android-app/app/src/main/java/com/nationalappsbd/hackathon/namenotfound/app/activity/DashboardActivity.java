@@ -10,7 +10,7 @@ import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
 
 @ContentView(R.layout.activity_main)
-public class MainActivity extends RoboActivity {
+public class DashboardActivity extends RoboActivity {
 
     //  @InjectView(R.id.main_label)
     //  TextView mainLabel;
@@ -21,7 +21,7 @@ public class MainActivity extends RoboActivity {
         // mainLabel.setText("Hello From Team: Name Not Found \n(Seriously guys??!! We can't find a name yet?)");
     }
 
-    public void onCounsellingSelection(View view) {
+    public void onCounselingSelection(View view) {
         Intent counsellingMessagingActivityIntent = new Intent(this, CounsellingMessagingActivity.class);
         counsellingMessagingActivityIntent.putExtra(CounsellingMessagingActivity.EXTRA_USER_ID, 1); //TODO: set actual userId here
 

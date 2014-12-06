@@ -2,6 +2,7 @@ package com.nationalappsbd.hackathon.namenotfound.app.activity;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -38,7 +39,7 @@ public class CounsellingMessagingActivity extends RoboListActivity {
     @InjectView(R.id.edit_message)
     private EditText messageEditor;
 
-    @InjectResource(R.string.sender_you)
+    @InjectResource(R.string.sender_me)
     private String senderYou;
     @InjectResource(R.string.sender_counselor)
     private String senderCounselor;
@@ -53,6 +54,8 @@ public class CounsellingMessagingActivity extends RoboListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
         userId = getIntent().getExtras().getInt(EXTRA_USER_ID);
         log.debug("userId={}", userId);
 
@@ -64,6 +67,16 @@ public class CounsellingMessagingActivity extends RoboListActivity {
         setListAdapter(messageListAdapter);
         messageListAdapter.notifyDataSetChanged();
         getListView().setSelection(messageList.size()-1);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+
+        return false;
     }
 
     public void sendMessage(View view) {

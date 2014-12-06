@@ -19,7 +19,7 @@
                  android:label="@string/app_name"
                  android:theme="@style/AppTheme">
 
-        <activity android:name=".activity.MainActivity"
+        <activity android:name=".activity.DashboardActivity"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -31,14 +31,14 @@
         <activity android:name=".activity.HeatmapActivity"
                   android:label="@string/heat_map"/>
 
-        <activity android:name=".activity.StoryActivity"
-                  android:label="@string/title_activity_story"/>
+        <activity android:name=".activity.AddStoryActivity"
+                  android:label="@string/tell_your_story"/>
 
-        <activity android:name=".activity.LocationPickerActivity"
-                  android:label="@string/title_activity_location_picker"/>
+        <activity android:name=".activity.AddStoryLocationActivity"
+                  android:label="@string/place_of_incident"/>
 
         <activity android:name=".activity.CounsellingMessagingActivity"
-                  android:label="@string/counselling_message_list"
+                  android:label="@string/counseling"
                   android:windowSoftInputMode="stateHidden"
                   android:configChanges="orientation|screenSize|keyboardHidden"/>
 

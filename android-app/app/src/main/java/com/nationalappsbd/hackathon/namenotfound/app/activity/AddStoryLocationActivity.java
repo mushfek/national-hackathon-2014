@@ -4,7 +4,6 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -19,8 +18,8 @@ import com.nationalappsbd.hackathon.namenotfound.app.domain.Story;
 import com.oneous.log4android.Logger;
 import roboguice.activity.RoboFragmentActivity;
 
-public class LocationPickerActivity extends RoboFragmentActivity implements LocationListener {
-    private Logger log = Logger.getLogger(LocationPickerActivity.class);
+public class AddStoryLocationActivity extends RoboFragmentActivity implements LocationListener {
+    private Logger log = Logger.getLogger(AddStoryLocationActivity.class);
 
     private Story story;
 
@@ -41,9 +40,21 @@ public class LocationPickerActivity extends RoboFragmentActivity implements Loca
         super.onCreate(savedInstanceState);
         log.debug("onCreate()");
 
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
         setContentView(R.layout.activity_location_picker);
-        story = (Story) getIntent().getExtras().getSerializable(StoryActivity.STORY_KEY);
+        story = (Story) getIntent().getExtras().getSerializable(AddStoryActivity.STORY_KEY);
         Toast.makeText(this, getString(R.string.map_loading_wait_help_test), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+
+        return false;
     }
 
     @Override
@@ -95,37 +106,13 @@ public class LocationPickerActivity extends RoboFragmentActivity implements Loca
         mMap.clear();
         mMap.addMarker(new MarkerOptions()
                 .position(lastClickedLocation)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.heat_map_location1)));
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_location_picker, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin)));
     }
 
     public void onClick(View view) {
         if (view.getId() == R.id.btn_submit) {
             story.setLatitude(lastClickedLocation.latitude);
             story.setLongitude(lastClickedLocation.longitude);
-
         }
     }
 

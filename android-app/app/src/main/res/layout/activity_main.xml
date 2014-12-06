@@ -1,121 +1,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                tools:context=".MainActivity">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              tools:context=".MainActivity">
+
+    <TextView style="@style/RoundedCornerAppThemeColorBg"
+              android:text="@string/emergency_help"
+              android:drawableTop="@drawable/emergency_help_dashboard"/>
 
     <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
-        <ImageView android:id="@+id/emergency_help"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_gravity="center_horizontal"
-                   android:paddingLeft="5dp"
-                   android:paddingRight="5dp"
-                   android:src="@drawable/ic_emergency_help"/>
-
-        <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="@string/emergency_help"/>
+                  android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+        <TextView style="@style/RoundedCornerAppThemeColorBg"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:layout_marginRight="8dp"
+                  android:text="@string/file_complaint"
+                  android:drawableTop="@drawable/file_complaint_dashboard"/>
+
+        <TextView style="@style/RoundedCornerAppThemeColorBg"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:layout_marginLeft="8dp"
+                  android:text="@string/awareness_portal"
+                  android:drawableTop="@drawable/awareness_portal_dashboard"/>
+
     </LinearLayout>
 
-    <LinearLayout android:layout_width="wrap_content"
+    <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:orientation="vertical">
+                  android:layout_marginTop="@dimen/activity_horizontal_margin">
 
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="match_parent"
-                      android:orientation="horizontal">
-            <FrameLayout android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:layout_gravity="left">
-                <ImageView android:id="@+id/crime_report"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_gravity="center_horizontal"
-                           android:paddingLeft="5dp"
-                           android:paddingRight="5dp"
-                           android:src="@drawable/ic_crime_report"/>
+        <TextView style="@style/RoundedCornerAppThemeColorBg"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:layout_marginRight="8dp"
+                  android:text="@string/counseling"
+                  android:drawableTop="@drawable/counseling_dashboard"
+                  android:onClick="onCounselingSelection"/>
 
-                <TextView android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="@string/crime_report"/>
-            </FrameLayout>
+        <TextView style="@style/RoundedCornerAppThemeColorBg"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:layout_marginLeft="8dp"
+                  android:text="@string/heat_map"
+                  android:drawableTop="@drawable/heatmap_dashboard"
+                  android:onClick="onHeatMapSelection"/>
 
-            <FrameLayout android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:layout_gravity="left"
-                         android:onClick="onCounsellingSelection">
-                <ImageView android:id="@+id/counselling"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_gravity="center_horizontal"
-                           android:paddingLeft="5dp"
-                           android:paddingRight="5dp"
-                           android:src="@drawable/ic_counselling"/>
-
-                <TextView android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="@string/counselling"/>
-            </FrameLayout>
-        </LinearLayout>
-
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="match_parent"
-                      android:orientation="horizontal">
-            <FrameLayout android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:layout_gravity="left">
-                <ImageView android:id="@+id/awareness_portal"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_gravity="center_horizontal"
-                           android:paddingLeft="5dp"
-                           android:paddingRight="5dp"
-                           android:src="@drawable/ic_awareness"/>
-
-                <TextView android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="@string/awareness_portal"/>
-            </FrameLayout>
-
-            <FrameLayout android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:layout_gravity="left"
-                         android:onClick="onHeatMapSelection">
-                <ImageView android:id="@+id/heat_map"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_gravity="center_horizontal"
-                           android:paddingLeft="5dp"
-                           android:paddingRight="5dp"
-                           android:src="@drawable/ic_heat_map"/>
-
-                <TextView android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="@string/heat_map"/>
-            </FrameLayout>
-        </LinearLayout>
     </LinearLayout>
-
-    <!--<TextView-->
-            <!--android:id="@+id/main_label"-->
-            <!--android:text="@string/hello_world"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"/>-->
-
-    <!--<com.getbase.floatingactionbutton.AddFloatingActionButton-->
-            <!--android:id="@+id/addNew"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_alignParentBottom="true"-->
-            <!--android:layout_alignParentRight="true"-->
-            <!--android:layout_alignParentEnd="true"/>-->
-
 
 </LinearLayout>
