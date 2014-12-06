@@ -1,39 +1,9 @@
-# Standard Web Application Project Skeleton
-### Develop web application with Spring Web MVC, Spring Security, JPA/Hibernate + MySQL, Thymeleaf, Bootstrap, Gradle
-
-Just clone this project from github and start developing your application functionality without wasting time on writing
-configurations and library setup if you gonna use following technology stack:
-
-1. Spring 4.0.5.RELEASE
-2. Spring Security 3.2.4.RELEASE
-3. Servlet 3.0
-4. Thymeleaf 2.1.3
-5. JPA/Hibernate 4.3.5
-6. Bootstrap 3.3.0
-7. Gradle 2.1
-8. Joda Time 2.4
-9. Tomcat 7.0.54 (Embedded)
-10. Slf4j/Log4j 1.7.5
-11. Junit 4.11
-12. spring-test 4.0.5.RELEASE (Spring MVC Test Framework)
-13. Mockito 1.9.5
-
-Following things has been configured:
-
-* Spring Security's standard User and Role based authentication system
-* Transaction support in Service/Dao layer
-* Database connection pooling with enterprise-ready c3p0 library
-* Bean Validation to validate model objects
-* Internationalization(i18n) with MessageSource
-* Templating framework (like Apache Tiles) to work with thymeleaf (Thymeleaf Layout Dialect)
-* Efficiently serving static contents like image/css/js
-* Prevent browsers from caching dynamic contents
-
-**Project Done so far:** A standard web application with authentication (login/logout) system and User management (create/role assignment) system has been implemented.
+# Team Name: 404 Name Not Found - National Hackathon 2014
+### App Name: Prottoyee
 
 ## Quick start
 
-First clone this project from github and navigate there from your command line/terminal.
+First clone this project from bitbucket and navigate there from your command line/terminal.
 
 **If you have gradle already installed**, just run `gradle build`
 then you will find a **war** file in your projects **/build/libs/** folder. Deploy it in your favorite container e.g. tomcat.
@@ -51,8 +21,9 @@ the gradle task, e.g. build war file for above command. To see the list of tasks
 
 ## Database Connection
 
-You need to create a database named "webapp" in your local MySQL database to work with this application.
-Change corresponding user credential to access database in `persistence-mysql.properties`.  
+You need to create a database named "prottoyee" in your local MySQL database to work with this application. Best way to do it from phpmyadmin
+is to to create a user name "prottoyee" and password "therap" and tick "Create database with same name and grant all privileges" option.
+Check corresponding user credential to access database in `persistence-mysql.properties`.
 **Note:** There is a `import.sql` file in classpath, which execute and insert a user 'admin' with password '123456' and proper roles
 when hibernate.hbm2ddl.auto property is set to create-drop in applicationContext-jpa.xml.
 
@@ -69,4 +40,4 @@ your browser to see it running. Cool...right? ;)
 3. Make sure, you installed jrebel at `/usr/local/JRebel` directory
 4. Run **gradle deployWar** in your source code which will copy the war file to tomcat's webapps folder
 5. From tomcat7/bin, start tomcat server by `./catalina-jrebel.sh run`
-6. Access application by browsing: [http://localhost:8080/webapp/](http://localhost:8080/webapp/)
+6. Access application by browsing: [http://localhost:8080/prottoyee/](http://localhost:8080/prottoyee/)

@@ -1,4 +1,4 @@
-package com.oneous.webapp.persistance.enums;
+package com.nationalappsbd.hackathon.prottoyee.webapp.persistance.enums;
 
 import org.springframework.security.core.GrantedAuthority;
 
@@ -7,8 +7,8 @@ import org.springframework.security.core.GrantedAuthority;
  */
 public enum Role implements GrantedAuthority {
 
-    ROLE_ADMIN,
-    ROLE_USER;
+    ROLE_ALL,
+    ROLE_NORMAL;
 
     //This GrantedAuthority interface implementation is to support SpringSecurity's role management cleanly
     @Override

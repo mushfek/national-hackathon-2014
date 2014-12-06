@@ -90,7 +90,7 @@ test {
     }
 }
 
-def appName = 'webapp'
+def appName = 'prottoyee'
 def appWarName = appName + '.war'
 def tomcatWebAppsHome = '/usr/local/tomcat7/webapps'
 

@@ -1,6 +1,6 @@
-package com.oneous.webapp.persistance.entity;
+package com.nationalappsbd.hackathon.prottoyee.webapp.persistance.entity;
 
-import com.oneous.webapp.persistance.enums.Role;
+import com.nationalappsbd.hackathon.prottoyee.webapp.persistance.enums.Role;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +15,7 @@ import java.util.Collection;
  */
 
 @Entity
-public class User extends Persistent implements UserDetails {
+public class AdminUser extends Persistent implements UserDetails {
 
     @Size(min = 6, max = 100)
     @Column(nullable = false, length = 100, unique = true)
@@ -38,7 +38,7 @@ public class User extends Persistent implements UserDetails {
 
     @NotEmpty
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
+    @CollectionTable(name = "admin_user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "role", nullable = false)
     private Collection<Role> roles;
 
