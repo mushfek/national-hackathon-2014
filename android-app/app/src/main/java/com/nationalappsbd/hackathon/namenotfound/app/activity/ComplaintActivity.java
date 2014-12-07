@@ -13,6 +13,7 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.*;
 import com.nationalappsbd.hackathon.namenotfound.app.R;
 import com.nationalappsbd.hackathon.namenotfound.app.domain.Complaint;
@@ -60,7 +61,7 @@ public class ComplaintActivity extends RoboActivity {
     private LinearLayout otherContactNumber;
 
     @InjectView(R.id.attachmentLayout)
-    private LinearLayout attachmentLayout;
+    private ViewGroup attachmentLayout;
     @InjectView(R.id.attachmentLink)
     private TextView attachmentLink;
 
