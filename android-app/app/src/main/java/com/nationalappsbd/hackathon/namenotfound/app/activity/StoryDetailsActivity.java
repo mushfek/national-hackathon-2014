@@ -20,7 +20,7 @@ public class StoryDetailsActivity extends RoboFragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.conselling_message);
+        setContentView(R.layout.user_message);
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
 

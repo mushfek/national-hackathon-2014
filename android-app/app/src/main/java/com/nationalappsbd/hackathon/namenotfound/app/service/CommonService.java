@@ -47,11 +47,10 @@ public class CommonService {
     public List<AwarenessCategory> getCategories() {
         List<AwarenessCategory> awarenessCategories = new ArrayList<AwarenessCategory>();
 
-        awarenessCategories.add(new AwarenessCategory(1, "Category 1"));
-        awarenessCategories.add(new AwarenessCategory(2, "Category 2"));
-        awarenessCategories.add(new AwarenessCategory(3, "Category 3"));
-        awarenessCategories.add(new AwarenessCategory(4, "Category 4"));
-        awarenessCategories.add(new AwarenessCategory(5, "Others"));
+        awarenessCategories.add(new AwarenessCategory(1, "General Experience Sharing"));
+        awarenessCategories.add(new AwarenessCategory(2, "Laws and Regulations"));
+        awarenessCategories.add(new AwarenessCategory(3, "Upcoming Campaigns"));
+        awarenessCategories.add(new AwarenessCategory(4, "Others"));
 
         return awarenessCategories;
     }
