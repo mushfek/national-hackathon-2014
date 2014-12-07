@@ -11,6 +11,7 @@
 
     <TextView style="@style/RoundedCornerAppThemeColorBg"
               android:text="@string/emergency_help"
+              android:onClick="onEmergencyHelpSelection"
               android:drawableTop="@drawable/emergency_help_dashboard"/>
 
     <LinearLayout android:layout_width="match_parent"

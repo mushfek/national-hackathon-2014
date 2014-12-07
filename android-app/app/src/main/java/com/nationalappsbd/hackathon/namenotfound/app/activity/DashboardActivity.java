@@ -1,19 +1,28 @@
 package com.nationalappsbd.hackathon.namenotfound.app.activity;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
+import android.view.*;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 import com.google.inject.Inject;
 import com.nationalappsbd.hackathon.namenotfound.app.R;
+import com.nationalappsbd.hackathon.namenotfound.app.util.view.adapter.ViewHolder;
 import com.nationalappsbd.hackathon.namenotfound.app.util.view.widget.DialogBuilder;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @ContentView(R.layout.activity_main)
 public class DashboardActivity extends RoboActivity {
+
+    @Inject
+    private LayoutInflater inflater;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +60,11 @@ public class DashboardActivity extends RoboActivity {
         startActivity(intent);
     }
 
+    public void onEmergencyHelpSelection(View view) {
+        showDropDown();
+    }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -72,4 +86,93 @@ public class DashboardActivity extends RoboActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void showDropDown() {
+
+        AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
+        builderSingle.setIcon(R.drawable.phone_number);
+        builderSingle.setTitle("Emergency Help");
+
+        List<EmergencyCall> emergencyCalls = new ArrayList<EmergencyCall>();
+
+        EmergencyCall emergencyCall = new EmergencyCall();
+        emergencyCall.id = R.drawable.polish_station;
+        emergencyCall.text = "Track Me";
+        emergencyCalls.add(emergencyCall);
+
+        emergencyCall = new EmergencyCall();
+        emergencyCall.id = R.drawable.phone_number;
+        emergencyCall.text = "Call National Help Line 10921";
+        emergencyCalls.add(emergencyCall);
+
+        emergencyCall = new EmergencyCall();
+        emergencyCall.id = R.drawable.phone_number;
+        emergencyCall.text = "Call Polish Station";
+        emergencyCalls.add(emergencyCall);
+
+        emergencyCall = new EmergencyCall();
+        emergencyCall.id = R.drawable.phone_number;
+        emergencyCall.text = "Call Personal Contact 1";
+        emergencyCalls.add(emergencyCall);
+
+        emergencyCall = new EmergencyCall();
+        emergencyCall.id = R.drawable.phone_number;
+        emergencyCall.text = "Call Personal Contact 2";
+        emergencyCalls.add(emergencyCall);
+
+        EmergencyCallAdapter emergencyCallAdapter = new EmergencyCallAdapter(emergencyCalls);
+
+        builderSingle.setAdapter(emergencyCallAdapter,
+                new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+//                        String strName = emergencyCallAdapter.getItem(which);
+//                        AlertDialog.Builder builderInner = new AlertDialog.Builder(DashboardActivity.this);
+//                        builderInner.setMessage(strName);
+//                        builderInner.setTitle("Your Selected Item is");
+//                        builderInner.setPositiveButton("Ok",
+//                                new DialogInterface.OnClickListener() {
+//
+//                                    @Override
+//                                    public void onClick(
+//                                            DialogInterface dialog,
+//                                            int which) {
+//                                        dialog.dismiss();
+//                                    }
+//                                });
+//                        builderInner.show();
+                    }
+                });
+        builderSingle.show();
+    }
+
+    class EmergencyCallAdapter extends ArrayAdapter<EmergencyCall> {
+
+        public EmergencyCallAdapter(List<EmergencyCall> callList) {
+            super(DashboardActivity.this, 0, callList);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (convertView == null) {
+                convertView = inflater.inflate(R.layout.emergency_help_list_view_single_item, parent, false);
+            }
+
+            EmergencyCall item = getItem(position);
+            ImageView imageView = ViewHolder.get(convertView, R.id.icon);
+            imageView.setImageResource(item.id);
+            TextView itemName = ViewHolder.get(convertView, R.id.item_name);
+
+            itemName.setText(item.text);
+
+            return convertView;
+        }
+    }
+
+    class EmergencyCall {
+        public String text;
+        public int id;
+    }
+
 }
