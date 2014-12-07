@@ -54,6 +54,7 @@
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="top"
             android:inputType="textMultiLine"
             android:ems="10"
             android:lines="6"

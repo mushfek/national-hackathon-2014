@@ -108,6 +108,7 @@ public class AddStoryActivity extends RoboActivity {
         Intent intent = new Intent(this, AddStoryLocationActivity.class);
         intent.putExtra(STORY_KEY, storyDomain);
         startActivity(intent);
+        finish();
     }
 
     private final TextWatcher textWatcher = new TextWatcher() {

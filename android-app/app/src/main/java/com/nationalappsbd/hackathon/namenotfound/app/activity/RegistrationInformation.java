@@ -17,7 +17,7 @@ public class RegistrationInformation extends RoboActivity {
 
     public void onClickRegister(View view) {
         Intent intent = new Intent(RegistrationInformation.this, DashboardActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 }

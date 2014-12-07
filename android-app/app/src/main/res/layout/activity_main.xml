@@ -22,6 +22,7 @@
                   android:layout_weight="1"
                   android:layout_marginRight="8dp"
                   android:text="@string/file_complaint"
+                  android:onClick="onFileComplaintSelection"
                   android:drawableTop="@drawable/file_complaint_dashboard"/>
 
         <TextView style="@style/RoundedCornerAppThemeColorBg"
@@ -29,7 +30,8 @@
                   android:layout_weight="1"
                   android:layout_marginLeft="8dp"
                   android:text="@string/awareness_portal"
-                  android:drawableTop="@drawable/awareness_portal_dashboard"/>
+                  android:drawableTop="@drawable/awareness_portal_dashboard"
+                  android:onClick="onAwarenessPortalSelection"/>
 
     </LinearLayout>
 

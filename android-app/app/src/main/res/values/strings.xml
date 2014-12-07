@@ -34,6 +34,7 @@
         <item>Other</item>
     </array>
 
+    <!-- Heatmap -->
     <string name="tell_your_story">Tell Your Story</string>
     <string name="hint_your_story">Your story…</string>
     <string name="label_story_input">
@@ -60,5 +61,24 @@
     <string name="counseling">Counseling</string>
     <string name="sender_me">Me</string>
     <string name="sender_counselor">Counselor</string>
+    <string name="title_activity_complaint">ComplaintActivity</string>
+    <string name="label_story_complaint_inptu">Your complaint will be forwared to Mohila Bishoyok Odhidoptor. Your
+        privacy is very important to us.</string>
+    <string name="label_complaint_title">Title</string>
+    <string name="label_complaint_attachment">Attachment(Optional)</string>
+    <string name="label_contact_number">Contact Number</string>
+    <string name="label_user_name">User Name</string>
+    <string name="label_relation_ship">Relationship with you -</string>
+    <string name="title_activity_complaint_list">ComplaintListActivity</string>
+
+    <!-- Awareness Portal -->
+    <string name="awareness_categories">Categories</string>
+    <string name="awareness_threads">Open Threads</string>
+    <string name="add_new_thread">Add New Thread</string>
+    <string name="thread_title">Give Your Post A Title</string>
+    <string name="thread_content">Type Your Message Here</string>
+    <string name="thread_add_success">Thread Added Successfully</string>
+    <string name="btn_add_another">Add Another Thread</string>
+    <string name="btn_view_thread_list">View Open Threads</string>
 
 </resources>
