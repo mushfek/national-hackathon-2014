@@ -1,13 +1,11 @@
 package com.nationalappsbd.hackathon.namenotfound.app.activity;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.inject.Inject;
 import com.nationalappsbd.hackathon.namenotfound.app.R;
@@ -16,10 +14,8 @@ import com.nationalappsbd.hackathon.namenotfound.app.domain.OpenThread;
 import com.nationalappsbd.hackathon.namenotfound.app.service.CommonService;
 import com.nationalappsbd.hackathon.namenotfound.app.util.view.adapter.ViewHolder;
 import com.oneous.log4android.Logger;
-import roboguice.activity.RoboActivity;
 import roboguice.activity.RoboListActivity;
 import roboguice.inject.ContentView;
-import roboguice.inject.InjectResource;
 import roboguice.inject.InjectView;
 
 import java.util.List;
@@ -66,7 +62,7 @@ public class AwarenessPortalConversationActivity extends RoboListActivity {
         //TODO: call service to fetch all conversations related to this thread
         OpenThread openThread = new OpenThread(323, "Thread title",
                 "djflsdjf dfjlskdjflskdjf djflsdkjflsdkjfsldkjflsd djfsdlkjflsdkfjldkjfkd",
-                "Jane Doe", "7th Dec, 2014 10:24 AM");
+                "Violet1", "7th Dec, 2014 10:24 AM");
 
         populateThreadView(openThread);
 
@@ -91,7 +87,7 @@ public class AwarenessPortalConversationActivity extends RoboListActivity {
         }
     }
 
-    private void populateThreadView(OpenThread  openThread) {
+    private void populateThreadView(OpenThread openThread) {
         threadTitleView.setText(openThread.getTitle());
         threadContentView.setText(openThread.getThreadContent());
         postedByView.setText(openThread.getPostedBy());
@@ -117,7 +113,7 @@ public class AwarenessPortalConversationActivity extends RoboListActivity {
 
             Message message = getItem(position);
 
-            senderAliasView.setText("Jane Doe");
+            senderAliasView.setText("Violet1");
             sentDateView.setText(message.getSentDate());
             sendTimeView.setText(message.getSentTime());
             messageBodyView.setText(message.getMessageBody());

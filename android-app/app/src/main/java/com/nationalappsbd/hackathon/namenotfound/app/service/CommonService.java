@@ -58,11 +58,11 @@ public class CommonService {
     public List<OpenThread> getThreadList() {
         List<OpenThread> openThreads = new ArrayList<OpenThread>();
 
-        openThreads.add(new OpenThread(1, "Thread title 1", "Blah blah blabity blah. Blah blah...", "Jane Doe", "Dec 6, 7:09 PM"));
-        openThreads.add(new OpenThread(2, "Thread title 2", "Blah blah blabity blah. Blah blah...", "Jane Doe", "Dec 6, 7:09 PM"));
-        openThreads.add(new OpenThread(3, "Thread title 3", "Blah blah blabity blah. Blah blah...", "Jane Doe", "Dec 6, 7:09 PM"));
-        openThreads.add(new OpenThread(4, "Thread title 4", "Blah blah blabity blah. Blah blah...", "Jane Doe", "Dec 6, 7:09 PM"));
-        openThreads.add(new OpenThread(5, "Thread title 5", "Blah blah blabity blah. Blah blah...", "Jane Doe", "Dec 6, 7:09 PM"));
+        openThreads.add(new OpenThread(1, "Thread title 1", "Blah blah blabity blah. Blah blah...", "Violet1", "Dec 6, 7:09 PM"));
+        openThreads.add(new OpenThread(2, "Thread title 2", "Blah blah blabity blah. Blah blah...", "Violet1", "Dec 6, 7:09 PM"));
+        openThreads.add(new OpenThread(3, "Thread title 3", "Blah blah blabity blah. Blah blah...", "Violet1", "Dec 6, 7:09 PM"));
+        openThreads.add(new OpenThread(4, "Thread title 4", "Blah blah blabity blah. Blah blah...", "Violet1", "Dec 6, 7:09 PM"));
+        openThreads.add(new OpenThread(5, "Thread title 5", "Blah blah blabity blah. Blah blah...", "Violet1", "Dec 6, 7:09 PM"));
 
         return openThreads;
     }
