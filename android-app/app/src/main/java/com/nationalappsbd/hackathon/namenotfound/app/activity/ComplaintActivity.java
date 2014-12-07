@@ -182,7 +182,7 @@ public class ComplaintActivity extends RoboActivity {
     }
 
     private void setAttachmentLink(String link) {
-        attachmentLink.setText("<a href='" + link + "'> Attachment<a>");
+        attachmentLink.setText(link);
     }
 
     private String getPath(Uri uri, int documentType) {
