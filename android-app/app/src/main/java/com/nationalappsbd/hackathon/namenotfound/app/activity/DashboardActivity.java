@@ -3,6 +3,7 @@ package com.nationalappsbd.hackathon.namenotfound.app.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.ArrayAdapter;
@@ -89,7 +90,7 @@ public class DashboardActivity extends RoboActivity {
 
     public void showDropDown() {
 
-        AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
+        final AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
         builderSingle.setIcon(R.drawable.phone_number);
         builderSingle.setTitle("Emergency Help");
 
@@ -103,45 +104,39 @@ public class DashboardActivity extends RoboActivity {
         emergencyCall = new EmergencyCall();
         emergencyCall.id = R.drawable.polish_station;
         emergencyCall.text = "Call National Help Line 10921";
+        emergencyCall.phoneNumber = "01911123123";
         emergencyCalls.add(emergencyCall);
 
         emergencyCall = new EmergencyCall();
         emergencyCall.id = R.drawable.polish_station;
         emergencyCall.text = "Call Polish Station";
+        emergencyCall.phoneNumber = "01911123123";
         emergencyCalls.add(emergencyCall);
 
         emergencyCall = new EmergencyCall();
         emergencyCall.id = R.drawable.phone_number;
+        emergencyCall.phoneNumber = "01911123123";
         emergencyCall.text = "Call Personal Contact 1";
         emergencyCalls.add(emergencyCall);
 
         emergencyCall = new EmergencyCall();
         emergencyCall.id = R.drawable.phone_number;
+        emergencyCall.phoneNumber = "01911123123";
         emergencyCall.text = "Call Personal Contact 2";
         emergencyCalls.add(emergencyCall);
 
-        EmergencyCallAdapter emergencyCallAdapter = new EmergencyCallAdapter(emergencyCalls);
+        final EmergencyCallAdapter emergencyCallAdapter = new EmergencyCallAdapter(emergencyCalls);
 
         builderSingle.setAdapter(emergencyCallAdapter,
                 new DialogInterface.OnClickListener() {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-//                        String strName = emergencyCallAdapter.getItem(which);
-//                        AlertDialog.Builder builderInner = new AlertDialog.Builder(DashboardActivity.this);
-//                        builderInner.setMessage(strName);
-//                        builderInner.setTitle("Your Selected Item is");
-//                        builderInner.setPositiveButton("Ok",
-//                                new DialogInterface.OnClickListener() {
-//
-//                                    @Override
-//                                    public void onClick(
-//                                            DialogInterface dialog,
-//                                            int which) {
-//                                        dialog.dismiss();
-//                                    }
-//                                });
-//                        builderInner.show();
+                        EmergencyCall item = emergencyCallAdapter.getItem(which);
+                        if (item.phoneNumber != null) {
+                            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + item.phoneNumber));
+                            startActivity(intent);
+                        }
                     }
                 });
         builderSingle.show();
@@ -173,6 +168,7 @@ public class DashboardActivity extends RoboActivity {
     class EmergencyCall {
         public String text;
         public int id;
+        public String phoneNumber;
     }
 
 }
