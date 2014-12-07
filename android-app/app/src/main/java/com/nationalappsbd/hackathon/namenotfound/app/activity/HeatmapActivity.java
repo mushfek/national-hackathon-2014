@@ -3,20 +3,24 @@ package com.nationalappsbd.hackathon.namenotfound.app.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.TypedValue;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
-import android.widget.Toast;
 import com.getbase.floatingactionbutton.AddFloatingActionButton;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.TileOverlayOptions;
 import com.google.maps.android.heatmaps.HeatmapTileProvider;
 import com.nationalappsbd.hackathon.namenotfound.app.R;
+import com.nationalappsbd.hackathon.namenotfound.app.domain.Story;
 import com.nationalappsbd.hackathon.namenotfound.app.service.StoryFactory;
 import com.oneous.log4android.Logger;
 import org.json.JSONArray;
@@ -45,6 +49,12 @@ public class HeatmapActivity extends RoboFragmentActivity {
     @InjectView(R.id.category)
     private Spinner category;
 
+    private static final int HEAT_MAP_MODE = 1;
+    private static final int MAP_POINTER = 2;
+
+    private static int MODE = HEAT_MAP_MODE;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +75,47 @@ public class HeatmapActivity extends RoboFragmentActivity {
                 finish();
             }
         });
+
+        category.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i > 0) {
+                    Object object = adapterView.getItemAtPosition(i);
+                    log.debug("onItemSelected() ={}, position ={}, id ={}", object, i, l);
+                    filterMap(object);
+                } else filterMap(null);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
+
+    private void filterMap(Object object) {
+        if (MODE == HEAT_MAP_MODE) {
+            if (object != null) {
+                List<LatLng> latLngs = StoryFactory.getInstance().getFilteredLocation(object.toString());
+                addHeatMap(latLngs);
+            } else {
+                addHeatMap(StoryFactory.getInstance().getLocation());
+            }
+        } else if (MODE == MAP_POINTER) {
+            if (object != null) {
+                addMapPointer(StoryFactory.getInstance().getFilteredStories(object.toString()));
+            } else {
+                addMapPointer(StoryFactory.getInstance().getStories());
+            }
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_heatmap, menu);
+        return true;
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -74,7 +124,37 @@ public class HeatmapActivity extends RoboFragmentActivity {
             return true;
         }
 
+        if (item.getItemId() == R.id.action_heatmap) {
+            if (mMap != null) {
+                addHeatMap(StoryFactory.getInstance().getLocation());
+                MODE = HEAT_MAP_MODE;
+                category.setSelection(0);
+            }
+        }
+
+        if (item.getItemId() == R.id.action_map_pointer) {
+            if (mMap != null) {
+                addMapPointer(StoryFactory.getInstance().getStories());
+                MODE = MAP_POINTER;
+                category.setSelection(0);
+            }
+        }
+
         return false;
+    }
+
+    private void addMapPointer(List<Story> stories) {
+        if (mMap != null) {
+            mMap.clear();
+
+            for (Story story : stories) {
+                mMap.addMarker(new MarkerOptions()
+                        .position(story.getLatLng())
+                        .title(story.getPledge()))
+                        .setSnippet(story.getId() + "# " + story.getStory());
+
+            }
+        }
     }
 
     @Override
@@ -108,7 +188,29 @@ public class HeatmapActivity extends RoboFragmentActivity {
             if (mMap != null) {
                 changeZoomButton();
                 setUpMap();
-                addHeatMap();
+                addHeatMap(StoryFactory.getInstance().getLocation());
+
+                mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                    @Override
+                    public void onInfoWindowClick(Marker marker) {
+                        String snipet = marker.getSnippet();
+                        Long id = Long.parseLong(snipet.substring(0, (snipet.indexOf("#"))));
+                        log.debug("onMarkerClick() , id={}", id);
+
+                        Intent intent = new Intent(HeatmapActivity.this, StoryDetailsActivity.class);
+                        intent.putExtra(StoryDetailsActivity.STORY_DETAILS_KEY, id);
+                        startActivity(intent);
+
+                    }
+                });
+
+                mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                    @Override
+                    public boolean onMarkerClick(Marker marker) {
+
+                        return false;
+                    }
+                });
             }
         }
     }
@@ -144,26 +246,19 @@ public class HeatmapActivity extends RoboFragmentActivity {
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 7));
     }
 
-    private void addHeatMap() {
+    private void addHeatMap(List<LatLng> list) {
         log.debug("addHeatMap()");
 
-        List<LatLng> list = null;
-
-        // Get the data: latitude/longitude positions of police stations.
-        try {
-            list = readItems(R.raw.police_stations);
-            list.addAll(StoryFactory.getInstance().getLocation());
-        } catch (JSONException e) {
-            Toast.makeText(this, "Problem reading list of locations.", Toast.LENGTH_LONG).show();
-        }
+        mMap.clear();
 
         // Create a heat map tile provider, passing it the latlngs of the police stations.
-        assert list != null;
-        HeatmapTileProvider heatmapTileProvider = new HeatmapTileProvider.Builder()
-                .data(list)
-                .build();
-        // Add a tile overlay to the map, using the heat map tile provider.
-        mMap.addTileOverlay(new TileOverlayOptions().tileProvider(heatmapTileProvider));
+        if (list != null && list.size() > 0) {
+            HeatmapTileProvider heatmapTileProvider = new HeatmapTileProvider.Builder()
+                    .data(list)
+                    .build();
+            // Add a tile overlay to the map, using the heat map tile provider.
+            mMap.addTileOverlay(new TileOverlayOptions().tileProvider(heatmapTileProvider));
+        }
     }
 
     private ArrayList<LatLng> readItems(int resource) throws JSONException {

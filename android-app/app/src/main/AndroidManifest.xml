@@ -57,11 +57,17 @@
                   android:label="@string/awareness_portal"/>
 
         <activity
-                android:name="com.nationalappsbd.hackathon.namenotfound.app.activity.ComplaintActivity"
+                android:name=".activity.ComplaintActivity"
                 android:label="@string/title_activity_complaint"/>
         <activity
-                android:name="com.nationalappsbd.hackathon.namenotfound.app.activity.ComplaintListActivity"
+                android:name=".activity.ComplaintListActivity"
                 android:label="@string/title_activity_complaint_list"/>
+
+        <activity
+                android:name=".activity.StoryDetailsActivity"
+                android:label="@string/title_activity_story_details" >
+        </activity>
+
         <!-- Google Maps API Key -->
 
         <meta-data

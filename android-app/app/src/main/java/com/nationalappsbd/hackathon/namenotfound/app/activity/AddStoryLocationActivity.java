@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.nationalappsbd.hackathon.namenotfound.app.R;
@@ -19,6 +18,8 @@ import com.nationalappsbd.hackathon.namenotfound.app.domain.Story;
 import com.nationalappsbd.hackathon.namenotfound.app.service.StoryFactory;
 import com.oneous.log4android.Logger;
 import roboguice.activity.RoboFragmentActivity;
+
+import java.util.Date;
 
 public class AddStoryLocationActivity extends RoboFragmentActivity implements LocationListener {
     private Logger log = Logger.getLogger(AddStoryLocationActivity.class);
@@ -107,16 +108,17 @@ public class AddStoryLocationActivity extends RoboFragmentActivity implements Lo
     private void putMarker() {
         mMap.clear();
         mMap.addMarker(new MarkerOptions()
-                .position(lastClickedLocation)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin)));
+                .position(lastClickedLocation));
     }
 
     public void onClick(View view) {
         if (view.getId() == R.id.btn_submit) {
             story.setLatitude(lastClickedLocation.latitude);
             story.setLongitude(lastClickedLocation.longitude);
-
+            story.setDate(new Date());
+            story.setId((long) (StoryFactory.getInstance().getStories().size() + 1));
             StoryFactory.getInstance().addStory(story);
+
             Intent intent = new Intent(this, HeatmapActivity.class);
             startActivity(intent);
             finish();

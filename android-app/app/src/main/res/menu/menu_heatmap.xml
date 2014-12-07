@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.nationalappsbd.hackathon.namenotfound.app.activity.AddStoryActivity">
+
+    <item android:id="@+id/action_heatmap"
+          android:title="@string/heat_map"
+          android:orderInCategory="100"
+          android:showAsAction="never"/>
+
+      <item android:id="@+id/action_map_pointer"
+            android:title="@string/pointer"
+            android:orderInCategory="100"
+            android:showAsAction="never"/>
+
+</menu>

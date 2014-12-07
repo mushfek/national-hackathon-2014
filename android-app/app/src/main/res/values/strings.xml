@@ -76,5 +76,7 @@
     <string name="thread_add_success">Thread Added Successfully</string>
     <string name="btn_add_another">Add Another Thread</string>
     <string name="btn_view_thread_list">View Open Threads</string>
+    <string name="pointer">Map Pointer</string>
+    <string name="title_activity_story_details">Story Details</string>
 
 </resources>
