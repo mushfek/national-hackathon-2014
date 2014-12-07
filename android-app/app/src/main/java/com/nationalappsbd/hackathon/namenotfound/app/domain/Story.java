@@ -1,13 +1,16 @@
 package com.nationalappsbd.hackathon.namenotfound.app.domain;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by A N M Bazlur Rahman
  *
  * @since 12/4/14.
  */
-public class Story implements Serializable{
+public class Story implements Serializable {
     private Long id;
     private String pledge;
     private String category;
@@ -15,6 +18,7 @@ public class Story implements Serializable{
     private double latitude;
     private double longitude;
     private String address;
+    private Date date;
 
     public Long getId() {
         return id;
@@ -70,5 +74,17 @@ public class Story implements Serializable{
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public LatLng getLatLng() {
+        return new LatLng(latitude, longitude);
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
