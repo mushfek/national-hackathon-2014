@@ -52,27 +52,35 @@
                   android:label="@string/awareness_portal"/>
 
         <activity
-                android:name="com.nationalappsbd.hackathon.namenotfound.app.activity.RegistrationMobileNumberActivity"
-                android:label="@string/app_name" >
+                android:name=".activity.RegistrationMobileNumberActivity"
+                android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
-                android:name="com.nationalappsbd.hackathon.namenotfound.app.activity.RegistrationVerificationCodeActivity"
-                android:label="@string/app_name" >
+                android:name=".activity.RegistrationVerificationCodeActivity"
+                android:label="@string/app_name">
         </activity>
         <activity
-                android:name="com.nationalappsbd.hackathon.namenotfound.app.activity.RegistrationInformation"
-                android:label="@string/app_name" >
+                android:name=".activity.RegistrationInformation"
+                android:label="@string/app_name">
         </activity>
-                android:name="com.nationalappsbd.hackathon.namenotfound.app.activity.ComplaintActivity"
+
+        <activity
+                android:name=".activity.ComplaintActivity"
                 android:label="@string/title_activity_complaint"/>
+
         <activity
-                android:name="com.nationalappsbd.hackathon.namenotfound.app.activity.ComplaintListActivity"
+                android:name=".activity.ComplaintListActivity"
                 android:label="@string/title_activity_complaint_list"/>
+
+        <activity
+                android:name=".activity.StoryDetailsActivity"
+                android:label="@string/title_activity_story_details">
+        </activity>
 
         <!-- Google Maps API Key -->
 
