@@ -96,17 +96,17 @@ public class DashboardActivity extends RoboActivity {
         List<EmergencyCall> emergencyCalls = new ArrayList<EmergencyCall>();
 
         EmergencyCall emergencyCall = new EmergencyCall();
-        emergencyCall.id = R.drawable.polish_station;
+        emergencyCall.id = R.drawable.track;
         emergencyCall.text = "Track Me";
         emergencyCalls.add(emergencyCall);
 
         emergencyCall = new EmergencyCall();
-        emergencyCall.id = R.drawable.phone_number;
+        emergencyCall.id = R.drawable.polish_station;
         emergencyCall.text = "Call National Help Line 10921";
         emergencyCalls.add(emergencyCall);
 
         emergencyCall = new EmergencyCall();
-        emergencyCall.id = R.drawable.phone_number;
+        emergencyCall.id = R.drawable.polish_station;
         emergencyCall.text = "Call Polish Station";
         emergencyCalls.add(emergencyCall);
 
