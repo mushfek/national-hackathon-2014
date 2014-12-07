@@ -61,6 +61,7 @@
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="top"
                 android:inputType="textMultiLine"
                 android:ems="10"
                 android:lines="6"
@@ -118,19 +119,28 @@
             <ImageButton android:layout_width="0dp"
                          android:layout_weight=".3"
                          android:layout_height="wrap_content"
+                         android:paddingTop="5dp"
+                         android:paddingBottom="5dp"
+                         android:background="@drawable/rounded_corner_theme_green"
                          android:onClick="uploadImageOptionClicked"
-                         android:src="@drawable/camera"/>
+                         android:src="@drawable/ic_camera"/>
 
             <ImageButton android:layout_width="0dp"
                          android:layout_weight=".3"
                          android:layout_height="wrap_content"
+                         android:paddingTop="5dp"
+                         android:paddingBottom="5dp"
+                         android:background="@drawable/rounded_corner_theme_green"
                          android:onClick="uploadAudioOptionClicked"
-                         android:src="@drawable/audio"/>
+                         android:src="@drawable/ic_audio"/>
 
             <ImageButton android:layout_width="0dp"
                          android:layout_weight=".3"
                          android:layout_height="wrap_content"
-                         android:src="@drawable/video"
+                         android:paddingTop="5dp"
+                         android:paddingBottom="5dp"
+                         android:background="@drawable/rounded_corner_theme_green"
+                         android:src="@drawable/ic_video"
                          android:onClick="uploadVideoOptionClicked"/>
 
         </LinearLayout>

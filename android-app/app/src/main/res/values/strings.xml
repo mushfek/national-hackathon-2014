@@ -30,12 +30,7 @@
         <item>Other</item>
     </array>
 
-
-    <!-- Counselling -->
-    <string name="counselling">Counselling</string>
-    <string name="counselling_message_list">Messages</string>
-    <string name="sender_you">You</string>
-
+    <!-- Heatmap -->
     <string name="tell_your_story">Tell Your Story</string>
     <string name="hint_your_story">Your story…</string>
     <string name="label_story_input">
