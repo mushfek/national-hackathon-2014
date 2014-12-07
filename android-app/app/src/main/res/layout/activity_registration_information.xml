@@ -1,69 +1,87 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".RegistrationInformation">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="25dp"
+              android:background="@drawable/splash_bg_gradient"
+              android:gravity="center_horizontal"
+              tools:context=".RegisterWithMobile">
+
+    <ImageView android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="-50dp"
+               android:layout_marginBottom="-75dp"
+               android:src="@drawable/app_name"/>
 
     <TextView
-            android:text="@string/registration_title"
-            android:padding="20dp"
-            android:textSize="18sp"
+            android:text="Please Complete Your Profile"
+            android:textSize="22sp"
+            android:textColor="@android:color/white"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
-    <LinearLayout android:layout_width="match_parent"
-                  android:orientation="horizontal"
-                  android:layout_height="wrap_content">
-        <TextView
-                android:text="Full Name: "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-    <LinearLayout android:layout_width="match_parent"
-                  android:orientation="horizontal"
-                  android:layout_height="wrap_content">
-        <TextView
-                android:text="Date of Birth: "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-    <LinearLayout android:layout_width="match_parent"
-                  android:orientation="horizontal"
-                  android:layout_height="wrap_content">
-        <TextView
-                android:text="City: "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <Button
-            android:layout_width="wrap_content"
+    <EditText
+            android:id="@+id/full_name"
+            android:layout_width="match_parent"
+            android:gravity="left"
+            android:inputType="number|none"
             android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/login_edittext_bg"
+            android:textColor="@android:color/white"
+            android:textColorHint="#ddd"
+            android:hint="Full Name"/>
+
+    <EditText
+            android:id="@+id/dob"
+            android:layout_width="match_parent"
+            android:gravity="left"
+            android:inputType="number|none"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/login_edittext_bg"
+            android:textColor="@android:color/white"
+            android:textColorHint="#ddd"
+            android:hint="Date of Birth"/>
+
+    <EditText
+            android:id="@+id/city"
+            android:layout_width="match_parent"
+            android:gravity="left"
+            android:inputType="number|none"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/login_edittext_bg"
+            android:textColor="@android:color/white"
+            android:textColorHint="#ddd"
+            android:hint="Address"/>
+
+    <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:gravity="left"
+            android:inputType="number|none"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/login_edittext_bg"
+            android:textColor="@android:color/white"
+            android:textColorHint="#ddd"
+            android:hint="Email"/>
+
+    <Button
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg_gradient"
             android:text="Register"
-            android:id="@+id/button"
+            android:textColor="@color/apptheme_color"
+            android:id="@+id/button_next"
             android:layout_gravity="center_horizontal"
             android:onClick="onClickRegister"/>
-
 
 </LinearLayout>

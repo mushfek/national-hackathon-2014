@@ -11,7 +11,7 @@
     <string name="awareness_portal">Awareness Portal</string>
     <string name="heat_map">Heat Map</string>
     <string name="hello_world">Hello world!</string>
-    <string name="registration_title">Registration!</string>
+    <string name="registration_title">Registration / Login</string>
     <string name="registration_text">Please enter your mobile number.
         We will send a sms contain verification code for registration. Your privacy will be ensured.</string>
     <string name="registration_verification_code_title">Please enter the 6 digit code we just sent to the mobile number you mentioned.</string>
