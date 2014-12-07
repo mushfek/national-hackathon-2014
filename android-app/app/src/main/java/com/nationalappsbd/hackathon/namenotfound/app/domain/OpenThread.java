@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class OpenThread implements Serializable {
     private int id;
     private String title;
-    private String threadBody;
+    private String threadContent;
     private String postedBy;
     private String postDate;
 
@@ -18,13 +18,13 @@ public class OpenThread implements Serializable {
     public OpenThread(int id, String title, String threadBody) {
         this.id = id;
         this.title = title;
-        this.threadBody = threadBody;
+        this.threadContent = threadBody;
     }
 
     public OpenThread(int id, String title, String threadBody, String postedBy, String postDate) {
         this.id = id;
         this.title = title;
-        this.threadBody = threadBody;
+        this.threadContent = threadBody;
         this.postedBy = postedBy;
         this.postDate = postDate;
     }
@@ -45,12 +45,12 @@ public class OpenThread implements Serializable {
         this.title = title;
     }
 
-    public String getThreadBody() {
-        return threadBody;
+    public String getThreadContent() {
+        return threadContent;
     }
 
-    public void setThreadBody(String threadBody) {
-        this.threadBody = threadBody;
+    public void setThreadContent(String threadContent) {
+        this.threadContent = threadContent;
     }
 
     public String getPostedBy() {

@@ -9,6 +9,7 @@ public class Message implements Serializable {
 
     private int id;
     private int parentId;
+    private int senderId;
     private String messageBody;
     private String sentDate;
     private String sentTime;
@@ -57,6 +58,14 @@ public class Message implements Serializable {
 
     public void setParentId(int parentId) {
         this.parentId = parentId;
+    }
+
+    public int getSenderId() {
+        return senderId;
+    }
+
+    public void setSenderId(int senderId) {
+        this.senderId = senderId;
     }
 
     public String getMessageBody() {

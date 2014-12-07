@@ -27,20 +27,30 @@ public class CommonService {
     }
 
     // TODO: implement it properly with async http client, currently it sends a dummy message list
-    public List<Message> getMailList(int userId) {
+    public List<Message> getMessageList(int userId) {
         log.debug("userId={}", userId);
 
-        return new ArrayList<Message>();
+        List<Message> messages = new ArrayList<Message>();
+
+        messages.add(new Message(1, 12, "sfsdfksdlkfj dskfjlsdjflsdk dkfjsdlkfjsldk", "7th Dec, 2014",
+                "10:42 AM", false));
+        messages.add(new Message(1, 12, "sfsdfksdlkfj dskfjlsdjflsdk dkfjsdlkfjsldk", "7th Dec, 2014",
+                "10:42 AM", false));
+        messages.add(new Message(1, 12, "sfsdfksdlkfj dskfjlsdjflsdk dkfjsdlkfjsldk", "7th Dec, 2014",
+                "10:42 AM", false));
+        messages.add(new Message(1, 12, "sfsdfksdlkfj dskfjlsdjflsdk dkfjsdlkfjsldk", "7th Dec, 2014",
+                "10:42 AM", false));
+
+        return messages;
     }
 
     public List<AwarenessCategory> getCategories() {
         List<AwarenessCategory> awarenessCategories = new ArrayList<AwarenessCategory>();
 
-        awarenessCategories.add(new AwarenessCategory(1, "Category 1"));
-        awarenessCategories.add(new AwarenessCategory(2, "Category 2"));
-        awarenessCategories.add(new AwarenessCategory(3, "Category 3"));
-        awarenessCategories.add(new AwarenessCategory(4, "Category 4"));
-        awarenessCategories.add(new AwarenessCategory(5, "Others"));
+        awarenessCategories.add(new AwarenessCategory(1, "General Experience Sharing"));
+        awarenessCategories.add(new AwarenessCategory(2, "Laws and Regulations"));
+        awarenessCategories.add(new AwarenessCategory(3, "Upcoming Campaigns"));
+        awarenessCategories.add(new AwarenessCategory(4, "Others"));
 
         return awarenessCategories;
     }
