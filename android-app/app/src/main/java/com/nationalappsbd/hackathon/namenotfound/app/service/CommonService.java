@@ -27,10 +27,21 @@ public class CommonService {
     }
 
     // TODO: implement it properly with async http client, currently it sends a dummy message list
-    public List<Message> getMailList(int userId) {
+    public List<Message> getMessageList(int userId) {
         log.debug("userId={}", userId);
 
-        return new ArrayList<Message>();
+        List<Message> messages = new ArrayList<Message>();
+
+        messages.add(new Message(1, 12, "sfsdfksdlkfj dskfjlsdjflsdk dkfjsdlkfjsldk", "7th Dec, 2014",
+                "10:42 AM", false));
+        messages.add(new Message(1, 12, "sfsdfksdlkfj dskfjlsdjflsdk dkfjsdlkfjsldk", "7th Dec, 2014",
+                "10:42 AM", false));
+        messages.add(new Message(1, 12, "sfsdfksdlkfj dskfjlsdjflsdk dkfjsdlkfjsldk", "7th Dec, 2014",
+                "10:42 AM", false));
+        messages.add(new Message(1, 12, "sfsdfksdlkfj dskfjlsdjflsdk dkfjsdlkfjsldk", "7th Dec, 2014",
+                "10:42 AM", false));
+
+        return messages;
     }
 
     public List<AwarenessCategory> getCategories() {

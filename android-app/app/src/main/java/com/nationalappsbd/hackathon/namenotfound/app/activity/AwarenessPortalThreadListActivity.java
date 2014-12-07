@@ -91,7 +91,7 @@ public class AwarenessPortalThreadListActivity extends RoboListActivity {
             OpenThread openThread = getItem(position);
 
             threadTitleView.setText(openThread.getTitle());
-            partialPostView.setText(getPartial(openThread.getThreadBody()) + "...");
+            partialPostView.setText(getPartial(openThread.getThreadContent()) + "...");
             userAliasView.setText(openThread.getPostedBy());
             postTimeView.setText(openThread.getPostDate());
 

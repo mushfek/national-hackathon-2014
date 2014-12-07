@@ -60,7 +60,7 @@ public class CounselingActivity extends RoboListActivity {
         log.debug("userId={}", userId);
 
         // TODO: call necessary service to fetch message list of corresponding user
-        messageList = commonService.getMailList(1);
+        messageList = commonService.getMessageList(1);
 
         // setting view adapter
         messageListAdapter = new CounsellingMessageListAdapter(messageList);
@@ -105,7 +105,7 @@ public class CounselingActivity extends RoboListActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
-                convertView = inflater.inflate(R.layout.conselling_message, parent, false);
+                convertView = inflater.inflate(R.layout.user_message, parent, false);
             }
 
             ImageView senderAvatarView = ViewHolder.get(convertView, R.id.sender_avatar);
